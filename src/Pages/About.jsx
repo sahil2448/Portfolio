@@ -3,6 +3,7 @@ import "../css/About.css";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import Education from "./Components/Education";
+import Experience from "./Components/Experience";
 import Skills from "./Components/Skills";
 import HTML from "../../public/All logos/HTML.webp";
 import CSS from "../../public/All logos/CSS.webp";
@@ -91,8 +92,33 @@ const About = () => {
 
   const content = {
     Experience: {
-      Heading: <>Btech chemical engineering</>,
-      subHeading: [],
+      Heading: <>Work Experience</>,
+      subHeading: [
+        <Experience
+          key={0}
+          org={"TEDxIITRoorkee"}
+          position={"Web Developer"}
+          techStack={"MERN + Socket.io + Extra tools"}
+          description={[
+            "Developed an animated web application of a well known club of IIT Roorkee ,To help them showcase their events,invited speakers, Past history, team members and component to sell t-shirts and tickets.",
+            "Had a great experience of transforming exact figma design into Dynamic and interactive web application.",
+            "Got to learn lot many insightful things and best practices from seniors.",
+          ]}
+          timeline={"August 2024 - Present"}
+        />,
+        <Experience
+          key={0}
+          org={"NSS IIT Roorkee"}
+          position={"Web Developer"}
+          techStack="Node.js, Express, MongoDB, HTML) + Extra tools"
+          description={[
+            "Contributed to public Git Repository of Web application of NSS_IITRoorkee.",
+            "Worked with team of 4 member, this helped me to enhance my team work skills, Advanced Git-Github skills and also improved my software technological skills.",
+            "Made highest contributions among all teammates.",
+          ]}
+          timeline={"July 2024 - Present"}
+        />,
+      ],
     },
     Education: {
       Heading: "Education history",
@@ -152,7 +178,7 @@ const About = () => {
   };
 
   return (
-    <section id="about-section" className="pt-40  min-h-screen">
+    <section id="about-section" className="pt-10  min-h-screen">
       <h1 className="relative text-5xl font-bold text-center font-heading    bg-gradient-to-r from-[#6366f1] to-[#a855f7] bg-clip-text text-transparent">
         About{" "}
       </h1>
@@ -183,7 +209,7 @@ const About = () => {
           </div>
           <div
             ref={contentRef}
-            className="flex flex-col justify-start items-center w-[80%] md:w-fit lg:w-[75%] min-h-[400px] h-auto space-y-12  p-8 rounded-xl shadow-xl"
+            className="flex flex-col justify-start items-center w-[80%] md:w-fit lg:w-[75%] h-[460px] overflow-y-scroll  space-y-5  p-5 rounded-xl shadow-xl"
             style={{ backgroundColor: "rgba(4, 50, 86, 0.521)" }}
           >
             <h2 className="self-start text-4xl font-display font-bold  bg-clip-text text-transparent bg-gradient-to-r from-primary to-secondary">

@@ -1,5 +1,14 @@
 import React from "react";
 
+/**
+ * A functional component that renders a single education entry.
+ * @param {object} props
+ * @param {string} props.level - The level of education (e.g. High School, Bachelor, Master, etc.)
+ * @param {string} props.degree - The degree earned (e.g. Diploma, Bachelor's, Master's, etc.)
+ * @param {string} props.year - The year the degree was earned
+ * @param {string} props.name - The name of the institution
+ * @returns {ReactElement} A div containing the education information
+ */
 const Education = ({ level, degree, year, name }) => {
   return (
     <div>
