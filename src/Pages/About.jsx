@@ -3,9 +3,64 @@ import "../css/About.css";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import Education from "./Components/Education";
+import Skills from "./Components/Skills";
+import HTML from "../../public/All logos/HTML.webp";
+import CSS from "../../public/All logos/CSS.webp";
+import JavaScript from "../../public/All logos/JavaScript.webp";
+import ReactDark from "../../public/All logos/React-Dark.webp";
+import TailwindCSS from "../../public/All logos/TailwindCSS-Dark.webp";
+import NodeJs from "../../public/All logos/NodeJs-Dark.webp";
+import ExpressJsDark from "../../public/All logos/ExpressJs-Dark.webp";
+import MongoDB from "../../public/All logos/MongoDB.webp";
+import REST_API from "../../public/All logos/REST_API.webp";
+import Redux from "../../public/All logos/Redux.webp";
+import SQL from "../../public/All logos/SQL.webp";
+import JWT from "../../public/All logos/JWT.webp";
+import GSAP from "../../public/All logos/GSAP.webp";
+import MaterialUI from "../../public/All logos/MaterialUI-Dark.webp";
+import DaisyUi from "../../public/All logos/DaisyUi.webp";
+import Bootstrap from "../../public/All logos/Bootstrap.webp";
+import Git from "../../public/All logos/Git.webp";
+import Github from "../../public/All logos/Github-Dark.webp";
+import NPM from "../../public/All logos/Npm-Dark.webp";
+import GoogleCloud from "../../public/All logos/GCP-Dark.webp";
+import AWS from "../../public/All logos/AWS-Dark.webp";
+import Vercel from "../../public/All logos/Vercel-Dark.webp";
 
 const About = () => {
   const [activeSection, setActiveSection] = useState("Education");
+
+  const FtechArr = [
+    { src: HTML, name: "HTML" },
+    { src: CSS, name: "CSS" },
+    { src: JavaScript, name: "JavaScript" },
+    { src: ReactDark, name: "React.js" },
+    { src: TailwindCSS, name: "TailwindCSS" },
+    { src: Redux, name: "Redux" },
+  ];
+  const BtechArr = [
+    { src: NodeJs, name: "Node-js" },
+    { src: ExpressJsDark, name: "Express.js" },
+    { src: REST_API, name: "Rest API" },
+    { src: JWT, name: "JWT" },
+  ];
+  const DtechArr = [
+    { src: MongoDB, name: "MongoDB" },
+    { src: SQL, name: "MySQL" },
+  ];
+  const OtechArr = [
+    { src: Git, name: "Git" },
+    { src: Github, name: "Github" },
+    { src: GSAP, name: "GSAP" },
+    { src: MaterialUI, name: "Material Ui" },
+    { src: DaisyUi, name: "Daisy UI" },
+    { src: Bootstrap, name: "Bootstrap" },
+    { src: NPM, name: "npm" },
+    { src: GoogleCloud, name: "Google Cloud" },
+    { src: Vercel, name: "Vercel" },
+    { src: AWS, name: "AWS" },
+  ];
+
   const sections = [
     "Education",
     "Experience",
@@ -72,9 +127,15 @@ const About = () => {
         />,
       ],
     },
+
     Skills: {
       Heading: "Technical Skills",
-      subHeading: [],
+      subHeading: [
+        <Skills key={0} name={"Frontend"} tech={FtechArr} />,
+        <Skills key={1} name={"Backend"} tech={BtechArr} />,
+        <Skills key={2} name={"Databases"} tech={DtechArr} />,
+        <Skills key={3} name={"Other Tools"} tech={OtechArr} />,
+      ],
     },
     Achievements: {
       Heading: "Awards & Recognition",
