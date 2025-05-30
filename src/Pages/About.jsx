@@ -4,6 +4,9 @@ import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import Education from "./Components/Education";
 import Experience from "./Components/Experience";
+import Achievements from "./Components/Achievements";
+import Contact from "./Components/Contact";
+
 import Skills from "./Components/Skills";
 import HTML from "../../public/All logos/HTML.webp";
 import CSS from "../../public/All logos/CSS.webp";
@@ -27,6 +30,13 @@ import NPM from "../../public/All logos/Npm-Dark.webp";
 import GoogleCloud from "../../public/All logos/GCP-Dark.webp";
 import AWS from "../../public/All logos/AWS-Dark.webp";
 import Vercel from "../../public/All logos/Vercel-Dark.webp";
+// import GmailDark from "../../public/All logos/Gmail-Dark.webp";
+import Twitter from "../../public/ContactIcons/twitter.webp";
+import Linkedin from "../../public/ContactIcons/linkedin.webp";
+import Instagram from "../../public/ContactIcons/instagram.webp";
+import Phone from "../../public/ContactIcons/phone.webp";
+import Gmail from "../../public/ContactIcons/gmail.webp";
+import githubNew from "../../public/ContactIcons/github.webp";
 
 const About = () => {
   const [activeSection, setActiveSection] = useState("Education");
@@ -63,11 +73,12 @@ const About = () => {
   ];
 
   const sections = [
+    "Intro",
+
     "Education",
     "Experience",
     "Skills",
     "Achievements",
-    "Hobbies",
     "Contact",
   ];
 
@@ -91,6 +102,10 @@ const About = () => {
   }, [activeSection]);
 
   const content = {
+    Intro: {
+      Heading: "What I Love To Do",
+      subHeading: [],
+    },
     Experience: {
       Heading: <>Work Experience</>,
       subHeading: [
@@ -164,16 +179,56 @@ const About = () => {
       ],
     },
     Achievements: {
-      Heading: "Awards & Recognition",
-      subHeading: [],
+      Heading: "Extracurriculars & Key Recognitions",
+      subHeading: [<Achievements key={0} />],
     },
-    Hobbies: {
-      Heading: "What I Love To Do",
-      subHeading: [],
-    },
+
     Contact: {
       Heading: "Get In Touch",
-      subHeading: [],
+      subHeading: [
+        <Contact
+          key={0}
+          type={"Mobile number"}
+          icon={Phone}
+          text={"+91 9309282448"}
+          link={"+91 9309282448"}
+        />,
+        <Contact
+          key={0}
+          type={"Gmail"}
+          icon={Gmail}
+          text={"syk2448@gmail.com"}
+          link={"syk2448@gmail.com"}
+        />,
+        <Contact
+          key={0}
+          type={"Linkedin"}
+          icon={Linkedin}
+          text={"sahil_kamble"}
+          link={"https://www.linkedin.com/in/sahil-kamble-43b3ba279/"}
+        />,
+        <Contact
+          key={0}
+          type={"Github"}
+          icon={githubNew}
+          text={"sahil2448"}
+          link={"https://github.com/sahil2448"}
+        />,
+        <Contact
+          key={0}
+          type={"Instagram"}
+          icon={Instagram}
+          text={"sk_2448_iitr"}
+          link={"https://www.instagram.com/sk_2448_iitr/"}
+        />,
+        <Contact
+          key={0}
+          type={"Twitter"}
+          icon={Twitter}
+          text={"SahilKamble2004"}
+          link={"https://x.com/SahilKamble2004"}
+        />,
+      ],
     },
   };
 

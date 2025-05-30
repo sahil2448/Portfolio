@@ -1,4 +1,6 @@
 import PropTypes from "prop-types";
+import { FaCheckCircle } from "react-icons/fa";
+
 const Experience = ({ org, position, techStack, timeline, description }) => {
   return (
     <div
@@ -23,8 +25,14 @@ const Experience = ({ org, position, techStack, timeline, description }) => {
         {" "}
         {description.map((item, idx) => {
           return (
-            <div className="text-base ml-4 mb-2" key={idx}>
-              -> {item}
+            <div
+              className="text-base ml-4 mb-2 flex items-start gap-3"
+              key={idx}
+            >
+              <p>
+                <FaCheckCircle className="mt-1 text-violet-600 transition-all duration-200 w-0 sm:w-[1vw]" />
+              </p>
+              {item}
             </div>
           );
         })}

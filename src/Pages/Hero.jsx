@@ -1,6 +1,10 @@
 import React from "react";
+import github from "../../public/ContactIcons/github.webp";
+import gmail from "../../public/ContactIcons/gmail.webp";
+import linkedin from "../../public/ContactIcons/linkedin.webp";
 
 const Hero = () => {
+  let icons = [github, linkedin, gmail];
   return (
     <div>
       <div
@@ -21,16 +25,29 @@ const Hero = () => {
               I'm a Passionate Mern Stack Developer from IIT Roorkee, Currently
               a 2nd year at chemical engineering department.
             </p>
-            <div className="flex flex-row gap-5">
-              <button className="btn btn-primary">Get Started</button>
-              <button className="btn btn-outline btn-info">
-                Donwload Resume
-              </button>
+            <div className="flex flex-col gap-8">
+              <div className="flex flex-row gap-5">
+                <button className="btn btn-primary">Get Started</button>
+                <button className="btn btn-outline btn-info">
+                  Donwload Resume
+                </button>
+              </div>
+              <div className="flex gap-10">
+                {icons.map((image, idx) => {
+                  return (
+                    <img
+                      className="  size-8 shadow-md shadow-violet-700 rounded-lg bg-violet-700 hover:shadow-xl hover:shadow-violet-500 hover:bg-violet-800 hover:scale-110 transition-all duration-200  focus:outline-none focus:ring-2 focus:ring-violet-400 cursor-pointer"
+                      key={idx}
+                      src={image}
+                      alt=""
+                    />
+                  );
+                })}
+              </div>
             </div>
           </div>
         </div>
       </div>
-      
     </div>
   );
 };

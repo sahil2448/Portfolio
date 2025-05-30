@@ -1,4 +1,3 @@
-import React, { useState } from "react";
 import PropTypes from "prop-types";
 
 const Skills = ({ name, tech }) => {
@@ -20,7 +19,7 @@ const Skills = ({ name, tech }) => {
               minHeight: "5rem",
               height: "fit-content",
             }}
-            className="border group border-sky-950 hover:border-violet-600 hover:scale-105  transition-all duration-150"
+            className="border group border-gray-600 hover:border-violet-600   transition-all duration-150"
           >
             {" "}
             <img
