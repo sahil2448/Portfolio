@@ -91,13 +91,10 @@ const Projects = () => {
       // style={{ backgroundColor: "rgba(7, 26, 47, 0.878)" }}
     >
       <div className="container mx-auto px-4 ">
-        <h2
-          className="text-3xl font-bold text-center mb-12"
-          style={{ color: "rgb(186, 205, 211)" }}
-        >
-          My Projects
-        </h2>
-        <div className="join grid grid-cols-2 lg:w-[30rem] mx-auto mb-10">
+        <h1 className="relative text-5xl font-bold text-center font-heading    bg-gradient-to-r from-[#6366f1] to-[#a855f7] bg-clip-text text-transparent">
+          My Projects{" "}
+        </h1>
+        <div className="join grid grid-cols-2 lg:w-[30rem] mx-auto mb-10 py-12">
           {btns.map((btn) => {
             return (
               <button

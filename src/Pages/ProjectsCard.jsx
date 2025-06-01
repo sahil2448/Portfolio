@@ -75,11 +75,18 @@ const ProjectsCard = ({
         </a>
         {/* Open the modal using document.getElementById('ID').showModal() method */}
         {/* Open the modal using document.getElementById('ID').showModal() method */}
-        <button
+        {/* <button
           className="btn btn-outline btn-accent  w-16"
           onClick={() => document.getElementById("my_modal_5").showModal()}
         >
           More
+        </button> */}
+        <button
+          onClick={() => document.getElementById("my_modal_5").showModal()}
+          className="group btn btn-soft bg-transparent relative overflow-hidden rounded-lg border-2 border-primary px-3 py-3 font-semibold text-primary transition-colors duration-300 hover:text-black"
+        >
+          <span className="absolute bottom-0 left-0 h-0 w-full bg-primary transition-all duration-300 ease-out group-hover:h-full"></span>
+          <span className="relative z-10 ">More</span>
         </button>
         <dialog id="my_modal_5" className="modal modal-bottom sm:modal-middle">
           <div className="modal-box">
