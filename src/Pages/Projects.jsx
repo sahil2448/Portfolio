@@ -101,7 +101,7 @@ const Projects = () => {
                 key={uuidv4()}
                 className={`join-item btn  text-base ${
                   activeBtn === btn
-                    ? "btn-active !bg-sky-600 border-2 border-sky-600 text-black"
+                    ? "btn-active !bg-primary border-2 border-primary text-black"
                     : "btn-outline"
                 }`}
                 onClick={() => setActiveBtn(btn)}

@@ -34,7 +34,7 @@ const ProjectsCard = ({
   return (
     <div
       ref={projectsCardRef}
-      className="card bg-base-100 shadow-xl overflow-hidden transition-all duration-300 hover:-translate-y-2  w-full sm:w-[70%] md:w-[60%] lg:w-[25rem]"
+      className="card bg-base-100 shadow-xl overflow-hidden transition-all duration-300 hover:-translate-y-2  w-[90vw] sm:w-[80vw] md:w-[60vw] lg:w-[25rem]"
       onMouseEnter={() => setIsHovering(true)}
       onMouseLeave={() => setIsHovering(false)}
     >
@@ -66,11 +66,17 @@ const ProjectsCard = ({
 
       {/* Card body */}
       <div className="card-body p-3 flex flex-row justify-between items-center ">
-        <h3 className="card-title text-lg">{title}</h3>
-        <a href={buttonLink} className="btn btn-primary w-16">
+        <h3 className="card-title text-xs sm:text-md md:text-lg">{title}</h3>
+        <a
+          href={buttonLink}
+          className="btn btn-primary text-xs px-2  sm:text-md lg:text-[0.9rem] sm:p-2  md:w-16"
+        >
           {buttonText2}
         </a>
-        <a href={buttonLink} className="btn btn-primary w-16">
+        <a
+          href={buttonLink}
+          className="btn btn-primary text-xs px-2 sm:text-md lg:text-[0.9rem] md:w-16"
+        >
           {buttonText1}
         </a>
         {/* Open the modal using document.getElementById('ID').showModal() method */}
