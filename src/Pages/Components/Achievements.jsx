@@ -12,7 +12,7 @@ const Achievements = () => {
   ];
 
   return (
-    <section className=" p-6 w-full flex flex-col items-start ">
+    <section className=" lg:p-3 w-full flex flex-col items-start ">
       <ul className="space-y-4 ">
         {arr.map((item, idx) => (
           <li

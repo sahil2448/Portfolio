@@ -57,6 +57,15 @@ const Projects = () => {
         buttonText2: "Live",
         buttonLink: "#",
       },
+      {
+        id: 3,
+        title: "TEDxIITRoorkee",
+        description: "",
+        // image:`${}`,
+        buttonText1: "Github",
+        buttonText2: "Live",
+        buttonLink: "#",
+      },
     ],
 
     Past: [
@@ -90,11 +99,11 @@ const Projects = () => {
       className="py-16 "
       // style={{ backgroundColor: "rgba(7, 26, 47, 0.878)" }}
     >
-      <div className="container mx-auto px-4 ">
-        <h1 className="relative text-5xl font-bold text-center font-heading    bg-gradient-to-r from-[#6366f1] to-[#a855f7] bg-clip-text text-transparent">
+      <div className="container mx-auto sm:p-8 md:px-10 lg:px-20 xl:px-32">
+        <h1 className="relative text-5xl font-bold text-center font-heading  bg-gradient-to-r from-[#6366f1] to-[#a855f7] bg-clip-text text-transparent">
           My Projects{" "}
         </h1>
-        <div className="join grid grid-cols-2 lg:w-[30rem] mx-auto mb-10 py-12">
+        <div className="join grid grid-cols-2 w-[80vw] sm:w-[60vw] lg:w-[30rem] mx-auto mb-10 py-12">
           {btns.map((btn) => {
             return (
               <button
@@ -111,7 +120,7 @@ const Projects = () => {
             );
           })}
         </div>
-        <div className="flex flex-row justify-evenly w-full flex-wrap gap-8 lg:gap-0">
+        <div className="flex flex-row justify-evenly w-full flex-wrap gap-8 md:gap-10 lg:gap-10">
           {projects[activeBtn].map((project) => (
             <div ref={projectsCardRef} key={uuidv4()}>
               <ProjectsCard

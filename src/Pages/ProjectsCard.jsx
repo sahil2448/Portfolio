@@ -34,7 +34,7 @@ const ProjectsCard = ({
   return (
     <div
       ref={projectsCardRef}
-      className="card bg-base-100 shadow-xl overflow-hidden transition-all duration-300 hover:-translate-y-2  w-[90vw] sm:w-[80vw] md:w-[60vw] lg:w-[25rem]"
+      className="card bg-base-100 shadow-xl overflow-hidden transition-all duration-300 hover:-translate-y-2  w-[90vw] sm:w-[50vw] md:w-[40vw] lg:w-[25rem]"
       onMouseEnter={() => setIsHovering(true)}
       onMouseLeave={() => setIsHovering(false)}
     >

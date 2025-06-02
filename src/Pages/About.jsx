@@ -238,8 +238,8 @@ const About = () => {
         About{" "}
       </h1>
       <div className="min-h-screen py-12">
-        <div className="flex flex-col gap-10 sm:flex-row max-w-7xl mx-auto justify-evenly items-center">
-          <div className="join flex flex-col justify-center w-full sm:w-[25%] space-y-4">
+        <div className="flex flex-col gap-10 sm:flex-row sm:gap-0 lg:gap-10 max-w-7xl mx-auto justify-evenly items-center">
+          <div className="join flex flex-col justify-center w-full sm:w-[40vw] md:w-[30vw] lg:w-[30vw] space-y-4">
             {sections.map((section) => {
               return (
                 <div className="w-[80%] mx-auto" key={section}>
@@ -264,7 +264,7 @@ const About = () => {
           </div>
           <div
             ref={contentRef}
-            className="flex flex-col justify-start items-center w-[80%] md:w-fit lg:w-[75%] h-[460px] overflow-y-scroll  space-y-5  p-5 rounded-xl shadow-xl"
+            className="flex flex-col justify-start items-center w-[90vw] sm:w-[55vw] md:w-[60vw] lg:w-[60vw] xl:w-[70vw] h-[460px] overflow-y-scroll  space-y-5  p-5 rounded-xl shadow-xl"
             style={{ backgroundColor: "rgba(4, 50, 86, 0.521)" }}
           >
             <h2 className="self-start text-4xl font-display font-bold  bg-clip-text text-transparent bg-gradient-to-r from-primary to-secondary">

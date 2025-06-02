@@ -7,11 +7,11 @@ const Experience = ({ org, position, techStack, timeline, description }) => {
       style={{
         backgroundColor: "rgba(7, 26, 47, 0.878)",
       }}
-      className="w-[90%] p-3 rounded-md border border-indigo-950 hover:border-violet-600 transition-all duration-300 cursor-pointer"
+      className="w-[80vw] sm:w-[50vw] lg:w-[50vw] p-3 rounded-md border border-indigo-950 hover:border-violet-600 transition-all duration-300 cursor-pointer"
     >
-      <div className="flex justify-between">
+      <div className="flex justify-between flex-col md:flex-row">
         {" "}
-        <div className="flex gap-3 text-violet-500">
+        <div className="flex  gap-3 text-violet-500">
           <li>
             {" "}
             <b>{org}</b>
