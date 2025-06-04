@@ -23,16 +23,16 @@ const Hero = () => {
         className="hero  min-h-screen bg-none"
         style={{ backgroundColor: "transparent" }}
       >
-        <div className="hero-content flex-col lg:flex-row-reverse">
-          <div className="avatar rounded-full flex justify-start items-start p-2 border-2 border-primary w-[70vw] sm:w-[70vw] md:w-[40vw] lg:w-[28vw] xl:w-[30vw]">
-            <div className=" rounded-full">
+        <div className="hero-content flex-col lg:flex-row-reverse gap-10">
+          <div className="avatar rounded-full lg:rounded-sm flex justify-start items-start p-2 border-2 border-primary w-[70vw] sm:w-[70vw] md:w-[40vw] lg:w-[28vw] xl:w-[30vw]">
+            <div className=" rounded-full lg:rounded-sm">
               <img src={profile} className="" />
             </div>
           </div>
-          <div className="w-[90vw] lg:w-[60%] flex flex-col justify-center items-center gap-4">
+          <div className="w-[90vw] md:w-[80vw]  lg:w-[60vw] flex flex-col justify-center items-center sm:items-start gap-4">
             <div>
               <h1 className="relative text-3xl lg:text-6xl mb-2 font-bold inline-block bg-gradient-to-r from-[#6366f1] to-[#a855f7] bg-clip-text text-transparent">
-                Hello world !
+                Hello World !
               </h1>
               <p className="text-xl lg:text-2xl font-semibold mb-2 text-white font-serif">
                 I’m{" "}
@@ -43,22 +43,26 @@ const Hero = () => {
               </p>
             </div>
 
-            <div className="flex flex-col py-3 mb-3  p-6 v-[90vw]">
+            <div className="flex flex-col py-3 mb-1  p-6 ">
               {/* <p className="text-lg text-violet-200 mb-4">
                 <span className="px-2 py-1 bg-violet-700/30 rounded-md font-medium text-violet-100">
                   Full Stack Developer
                 </span>{" "}
                 &nbsp;|&nbsp; 2nd Year @ IIT Roorkee
               </p> */}
-              <ul className="list-disc list-inside space-y-1 text-violet-100 text-base ">
+              <ul className=" space-y-1  text-gray-300 ">
                 <li>
-                  I'm a Passionate Full Stack Developer, problem solver &
+                  {"- "}I'm a Passionate Full Stack Developer, problem solver &
                   upcoming 3rd year student at IIT Roorkee.
                 </li>
                 <li>
-                  Constantly improving my skills through project based learning.
+                  {"- "}Constantly improving my skills through project based
+                  learning.
                 </li>
-                <li>I Like Building software Stuff and solving problems.</li>
+                <li>
+                  {" "}
+                  {"- "}I Like Building software Stuff and solving problems.
+                </li>
               </ul>
             </div>
 

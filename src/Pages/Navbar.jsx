@@ -92,13 +92,13 @@ const Navbar = () => {
   ];
 
   return (
-    <div className="sticky top:0 lg:top-5 z-50 backdrop-blur-md bg-opacity-40 bg-base-100 lg:w-[80%] lg:mx-auto border border-gray-600 rounded-3xl md:px-10">
+    <div className="sticky top:0 lg:top-5 z-50  backdrop-blur-md bg-opacity-40 bg-base-100 lg:w-[80%] lg:mx-auto border border-gray-600 md:rounded-3xl md:px-10">
       {isSmallScreen ? (
         // Mobile drawer navigation
-        <div className="drawer drawer-end">
+        <div className="drawer drawer-end ">
           <input id="navbar-drawer" type="checkbox" className="drawer-toggle" />
           <div className="drawer-content">
-            <nav className="max-w-7xl mx-auto p-4">
+            <nav className="max-w-7xl mx-auto p-4 ">
               <div ref={navRef} className="flex items-center justify-between">
                 {/* <div className="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-primary to-secondary"> */}
                 {/* <div className="text-2xl font-bold bg-clip-text text-transparent !text-sky-500">
@@ -191,7 +191,7 @@ const Navbar = () => {
                 <button
                   key={index}
                   onClick={() => scrollToSection(item.id)}
-                  className="btn btn-ghost hover:text-sky-500 transition-colors cursor-pointer"
+                  className="btn btn-ghost hover:text-primary transition-colors cursor-pointer"
                 >
                   {item.label}
                 </button>

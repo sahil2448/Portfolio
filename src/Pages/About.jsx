@@ -37,6 +37,7 @@ import Instagram from "../../public/ContactIcons/instagram.webp";
 import Phone from "../../public/ContactIcons/phone.webp";
 import Gmail from "../../public/ContactIcons/gmail.webp";
 import githubNew from "../../public/ContactIcons/github.webp";
+import Intro from "./Components/Intro";
 
 const About = () => {
   const [activeSection, setActiveSection] = useState("Education");
@@ -103,8 +104,8 @@ const About = () => {
 
   const content = {
     Intro: {
-      Heading: "What I Love To Do",
-      subHeading: [],
+      Heading: "About Myself",
+      subHeading: [<Intro key={0} />],
     },
     Experience: {
       Heading: <>Work Experience</>,
@@ -253,9 +254,9 @@ const About = () => {
                     style={{
                       backgroundColor:
                         section === activeSection
-                          ? "rgba(51, 32, 98, 0.95)"
+                          ? ""
                           : "rgba(4, 50, 86, 0.521)",
-                      color: section === activeSection ? "white" : "",
+                      color: section === activeSection ? "black" : "",
                     }}
                   />
                 </div>

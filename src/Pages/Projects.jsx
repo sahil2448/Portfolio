@@ -8,6 +8,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import NoteSphere from "../../public/ProjectImages/NoteSphere.webp";
 import Wandarlust from "../../public/ProjectImages/Wandarlust.png";
 import Todo from "../../public/ProjectImages/Todo.png";
+import TedX from "../../public/ProjectImages/Tedx.png";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -48,20 +49,20 @@ const Projects = () => {
         buttonLink: "#",
       },
       {
-        id: 2,
-        title: "Note-sphere",
-        description:
-          "The ultimate note-sharing hub! Upload, rate, like, and download notes effortlessly. Perfect for students looking for last-minute revision material before exams!",
-        image: `${NoteSphere}`,
+        id: 3,
+        title: "TEDxIITRoorkee",
+        description: "",
+        image: `${TedX}`,
         buttonText1: "Github",
         buttonText2: "Live",
         buttonLink: "#",
       },
       {
-        id: 3,
-        title: "TEDxIITRoorkee",
-        description: "",
-        // image:`${}`,
+        id: 2,
+        title: "Note-sphere",
+        description:
+          "The ultimate note-sharing hub! Upload, rate, like, and download notes effortlessly. Perfect for students looking for last-minute revision material before exams!",
+        image: `${NoteSphere}`,
         buttonText1: "Github",
         buttonText2: "Live",
         buttonLink: "#",
