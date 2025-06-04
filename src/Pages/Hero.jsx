@@ -3,7 +3,7 @@ import github from "../../public/ContactIcons/github.webp";
 import gmail from "../../public/ContactIcons/gmail.webp";
 import linkedin from "../../public/ContactIcons/linkedin.webp";
 // import profile from "../../public/profile-rm-bg.png";
-import profile from "../../public/profile.jpg";
+import profile from "../../public/profile.webp";
 import BackgroundVideo from "./BackgroundVideo";
 import { FaFileDownload } from "react-icons/fa";
 

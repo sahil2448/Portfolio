@@ -8,7 +8,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import NoteSphere from "../../public/ProjectImages/NoteSphere.webp";
 import Wandarlust from "../../public/ProjectImages/Wandarlust.png";
 import Todo from "../../public/ProjectImages/Todo.png";
-import TedX from "../../public/ProjectImages/Tedx.png";
+import TedX from "../../public/ProjectImages/Tedx.webp";
 
 gsap.registerPlugin(ScrollTrigger);
 
