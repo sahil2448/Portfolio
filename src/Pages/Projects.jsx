@@ -5,10 +5,10 @@ import ProjectsCard from "./ProjectsCard";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import NoteSphere from "../../public/ProjectImages/NoteSphere.webp";
-import Wandarlust from "../../public/ProjectImages/Wandarlust.png";
-import Todo from "../../public/ProjectImages/Todo.png";
-import TedX from "../../public/ProjectImages/Tedx.webp";
+import NoteSphere from "/ProjectImages/NoteSphere.webp";
+import Wandarlust from "/ProjectImages/Wandarlust.png";
+import Todo from "/ProjectImages/Todo.png";
+import TedX from "/ProjectImages/TedX.webp";
 
 gsap.registerPlugin(ScrollTrigger);
 

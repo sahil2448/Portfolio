@@ -1,9 +1,8 @@
-import React from "react";
-import github from "../../public/ContactIcons/github.webp";
-import gmail from "../../public/ContactIcons/gmail.webp";
-import linkedin from "../../public/ContactIcons/linkedin.webp";
-// import profile from "../../public/profile-rm-bg.png";
-import profile from "../../public/profile.webp";
+import github from "/ContactIcons/github.webp";
+import gmail from "/ContactIcons/gmail.webp";
+import linkedin from "/ContactIcons/linkedin.webp";
+// import profile from "/profile-rm-bg.png";
+import profile from "/profile.webp";
 import BackgroundVideo from "./BackgroundVideo";
 import { FaFileDownload } from "react-icons/fa";
 
@@ -44,12 +43,6 @@ const Hero = () => {
             </div>
 
             <div className="flex flex-col py-3 mb-1  p-6 ">
-              {/* <p className="text-lg text-violet-200 mb-4">
-                <span className="px-2 py-1 bg-violet-700/30 rounded-md font-medium text-violet-100">
-                  Full Stack Developer
-                </span>{" "}
-                &nbsp;|&nbsp; 2nd Year @ IIT Roorkee
-              </p> */}
               <ul className=" space-y-1  text-gray-300 ">
                 <li>
                   {"- "}I'm a Passionate Full Stack Developer, problem solver &

@@ -8,35 +8,35 @@ import Achievements from "./Components/Achievements";
 import Contact from "./Components/Contact";
 
 import Skills from "./Components/Skills";
-import HTML from "../../public/All logos/HTML.webp";
-import CSS from "../../public/All logos/CSS.webp";
-import JavaScript from "../../public/All logos/JavaScript.webp";
-import ReactDark from "../../public/All logos/React-Dark.webp";
-import TailwindCSS from "../../public/All logos/TailwindCSS-Dark.webp";
-import NodeJs from "../../public/All logos/NodeJs-Dark.webp";
-import ExpressJsDark from "../../public/All logos/ExpressJs-Dark.webp";
-import MongoDB from "../../public/All logos/MongoDB.webp";
-import REST_API from "../../public/All logos/REST_API.webp";
-import Redux from "../../public/All logos/Redux.webp";
-import SQL from "../../public/All logos/SQL.webp";
-import JWT from "../../public/All logos/JWT.webp";
-import GSAP from "../../public/All logos/GSAP.webp";
-import MaterialUI from "../../public/All logos/MaterialUI-Dark.webp";
-import DaisyUi from "../../public/All logos/DaisyUi.webp";
-import Bootstrap from "../../public/All logos/Bootstrap.webp";
-import Git from "../../public/All logos/Git.webp";
-import Github from "../../public/All logos/Github-Dark.webp";
-import NPM from "../../public/All logos/Npm-Dark.webp";
-import GoogleCloud from "../../public/All logos/GCP-Dark.webp";
-import AWS from "../../public/All logos/AWS-Dark.webp";
-import Vercel from "../../public/All logos/Vercel-Dark.webp";
-// import GmailDark from "../../public/All logos/Gmail-Dark.webp";
-import Twitter from "../../public/ContactIcons/twitter.webp";
-import Linkedin from "../../public/ContactIcons/linkedin.webp";
-import Instagram from "../../public/ContactIcons/instagram.webp";
-import Phone from "../../public/ContactIcons/phone.webp";
-import Gmail from "../../public/ContactIcons/gmail.webp";
-import githubNew from "../../public/ContactIcons/github.webp";
+import HTML from "/All logos/HTML.webp";
+import CSS from "/All logos/CSS.webp";
+import JavaScript from "/All logos/JavaScript.webp";
+import ReactDark from "/All logos/ReactDark.webp";
+import TailwindCSS from "/All logos/TailwindCSSDark.webp";
+import NodeJsDark from "/All logos/NodeJsDark.webp";
+import ExpressJsDark from "/All logos/ExpressJsDark.webp";
+import MongoDB from "/All logos/MongoDB.webp";
+import REST_API from "/All logos/REST_API.webp";
+import Redux from "/All logos/Redux.webp";
+import SQL from "/All logos/SQL.webp";
+import JWT from "/All logos/JWT.webp";
+import GSAP from "/All logos/GSAP.webp";
+import MaterialUIDark from "/All logos/MaterialUIDark.webp";
+import DaisyUi from "/All logos/DaisyUi.webp";
+import Bootstrap from "/All logos/Bootstrap.webp";
+import Git from "/All logos/Git.webp";
+import GithubDark from "/All logos/GithubDark.webp";
+import NPM from "/All logos/NpmDark.webp";
+import GCPDark from "/All logos/GCPDark.webp";
+import AWS from "/All logos/AWSDark.webp";
+import VercelDark from "/All logos/VercelDark.webp";
+// import GmailDark from "/All logos/Gmail-Dark.webp";
+import Twitter from "/ContactIcons/twitter.webp";
+import Linkedin from "/ContactIcons/linkedin.webp";
+import Instagram from "/ContactIcons/instagram.webp";
+import Phone from "/ContactIcons/phone.webp";
+import Gmail from "/ContactIcons/gmail.webp";
+import githubNew from "/ContactIcons/github.webp";
 import Intro from "./Components/Intro";
 
 const About = () => {
@@ -51,7 +51,7 @@ const About = () => {
     { src: Redux, name: "Redux" },
   ];
   const BtechArr = [
-    { src: NodeJs, name: "Node-js" },
+    { src: NodeJsDark, name: "Node-js" },
     { src: ExpressJsDark, name: "Express.js" },
     { src: REST_API, name: "Rest API" },
     { src: JWT, name: "JWT" },
@@ -62,14 +62,14 @@ const About = () => {
   ];
   const OtechArr = [
     { src: Git, name: "Git" },
-    { src: Github, name: "Github" },
+    { src: GithubDark, name: "Github" },
     { src: GSAP, name: "GSAP" },
-    { src: MaterialUI, name: "Material Ui" },
+    { src: MaterialUIDark, name: "Material Ui" },
     { src: DaisyUi, name: "Daisy UI" },
     { src: Bootstrap, name: "Bootstrap" },
     { src: NPM, name: "npm" },
-    { src: GoogleCloud, name: "Google Cloud" },
-    { src: Vercel, name: "Vercel" },
+    { src: GCPDark, name: "Google Cloud" },
+    { src: VercelDark, name: "Vercel" },
     { src: AWS, name: "AWS" },
   ];
 
@@ -128,7 +128,7 @@ const About = () => {
           position={"Web Developer"}
           techStack="Node.js, Express, MongoDB, HTML) + Extra tools"
           description={[
-            "Contributed to public Git Repository of Web application of NSS_IITRoorkee.",
+            "Contribut Git Repository of Web application of NSS_IITRoorkee.",
             "Worked with team of 4 member, this helped me to enhance my team work skills, Advanced Git-Github skills and also improved my software technological skills.",
             "Made highest contributions among all teammates.",
           ]}

@@ -1,7 +1,6 @@
-import React from "react";
-import github from "../../public/ContactIcons/github.webp";
-import gmail from "../../public/ContactIcons/gmail.webp";
-import linkedin from "../../public/ContactIcons/linkedin.webp";
+import github from "/ContactIcons/github.webp";
+import gmail from "/ContactIcons/gmail.webp";
+import linkedin from "/ContactIcons/linkedin.webp";
 function Footer() {
   let icons = [
     { imgUrl: github, lk: "https://github.com/sahil2448" },
