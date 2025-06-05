@@ -108,7 +108,7 @@ const Navbar = () => {
                   Sahil kamble
                 </div>
                 <div className="flex items-center gap-2">
-                  <label className="swap swap-rotate btn btn-circle btn-ghost">
+                  {/* <label className="swap swap-rotate btn btn-circle btn-ghost">
                     <input
                       type="checkbox"
                       checked={darkTheme}
@@ -128,7 +128,7 @@ const Navbar = () => {
                     >
                       <path d="M21.64,13a1,1,0,0,0-1.05-.14,8.05,8.05,0,0,1-3.37.73A8.15,8.15,0,0,1,9.08,5.49a8.59,8.59,0,0,1,.25-2A1,1,0,0,0,8,2.36,10.14,10.14,0,1,0,22,14.05,1,1,0,0,0,21.64,13Zm-9.5,6.69A8.14,8.14,0,0,1,7.08,5.22v.27A10.15,10.15,0,0,0,17.22,15.63a9.79,9.79,0,0,0,2.1-.22A8.11,8.11,0,0,1,12.14,19.73Z" />
                     </svg>
-                  </label>
+                  </label> */}
                   <label
                     htmlFor="navbar-drawer"
                     className="btn btn-circle btn-ghost"
@@ -157,18 +157,25 @@ const Navbar = () => {
               aria-label="close sidebar"
               className="drawer-overlay"
             ></label>
-            <ul className="menu bg-base-200 text-base-content min-h-full w-80 p-4">
-              {navItems.map((item, index) => (
-                <li key={index}>
-                  <a
-                    href={item.href}
-                    onClick={() => scrollToSection(item.id)}
-                    className="cursor-pointer"
-                  >
-                    {item.label}
-                  </a>
-                </li>
-              ))}
+            <ul
+              className="menu text-base-content min-h-full w-[60vw] p-4"
+              style={{
+                backgroundColor: "rgba(7, 26, 47, 0.978)",
+              }}
+            >
+              <div className="flex flex-col justify-center items-center gap-2 ">
+                {navItems.map((item, index) => (
+                  <li key={index}>
+                    <a
+                      href={item.href}
+                      onClick={() => scrollToSection(item.id)}
+                      className="cursor-pointer"
+                    >
+                      {item.label}
+                    </a>
+                  </li>
+                ))}
+              </div>
             </ul>
           </div>
         </div>
