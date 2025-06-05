@@ -3,9 +3,9 @@ import "../css/Navbar.css";
 import gsap from "gsap";
 
 const Navbar = () => {
-  const [darkTheme, setDarkTheme] = useState(
-    localStorage.getItem("theme") === "dark"
-  );
+  // const [darkTheme, setDarkTheme] = useState(
+  //   localStorage.getItem("theme") === "dark"
+  // );
   const [isSmallScreen, setIsSmallScreen] = useState(false);
   const navRef = useRef(null);
   const navItemsRef = useRef(null);
@@ -62,14 +62,14 @@ const Navbar = () => {
   }, []);
 
   // Theme effect
-  useEffect(() => {
-    if (darkTheme) {
-      document.documentElement.setAttribute("data-theme", "dark");
-    } else {
-      document.documentElement.setAttribute("data-theme", "light");
-    }
-    localStorage.setItem("theme", darkTheme ? "dark" : "light");
-  }, [darkTheme]);
+  // useEffect(() => {
+  //   if (darkTheme) {
+  //     document.documentElement.setAttribute("data-theme", "dark");
+  //   } else {
+  //     document.documentElement.setAttribute("data-theme", "light");
+  //   }
+  //   localStorage.setItem("theme", darkTheme ? "dark" : "light");
+  // }, [darkTheme]);
 
   const scrollToSection = (sectionId) => {
     const drawerCheckbox = document.getElementById("navbar-drawer");
