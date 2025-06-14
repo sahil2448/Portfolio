@@ -10,6 +10,7 @@ import Wandarlust from "/ProjectImages/Wandarlust.png";
 import Todo from "/ProjectImages/Todo.png";
 import Calculator from "/ProjectImages/Calculator.png";
 import TedX from "/ProjectImages/TedX.webp";
+import LiveCircle from "/ProjectImages/LiveCircle.png";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -70,6 +71,16 @@ const Projects = () => {
         buttonText2: "Live",
         buttonLink: "https://spontaneous-stardust-0bdf9a.netlify.app/",
         githubLink: "https://github.com/sahil2448/Syntax-Error-24",
+      },
+      {
+        id: 3,
+        title: "LiveCircle",
+        description: "",
+        image: `${LiveCircle}`,
+        buttonText1: "Github",
+        buttonText2: "Live",
+        buttonLink: "https://livecircle-f.onrender.com/",
+        githubLink: "https://github.com/sahil2448/LiveCircle",
       },
     ],
 
