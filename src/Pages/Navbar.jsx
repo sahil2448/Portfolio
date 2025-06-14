@@ -101,8 +101,11 @@ const Navbar = () => {
                 {/* <div className="text-2xl font-bold bg-clip-text text-transparent !text-sky-500">
                   Portfolio
                 </div> */}
-                <div className="relative inline-block mt-2 bg-gradient-to-r from-[#6366f1] to-[#a855f7] bg-clip-text text-transparent">
-                  Sahil kamble
+                <div
+                  onClick={() => scrollToSection("hero-section")}
+                  className="relative cursor-pointer inline-block mt-2 bg-gradient-to-r from-[#6366f1] to-[#a855f7] bg-clip-text text-transparent"
+                >
+                  SK
                 </div>
                 <div className="flex items-center gap-2">
                   <label
@@ -163,7 +166,10 @@ const Navbar = () => {
             {/* <div className="text-2xl font-bold bg-clip-text text-transparent !text-sky-500">
               Portfolio
             </div> */}
-            <div className="relative text-2xl font-bold inline-block  bg-gradient-to-r from-[#6366f1] to-[#a855f7] bg-clip-text text-transparent">
+            <div
+              onClick={() => scrollToSection("hero-section")}
+              className="relative cursor-pointer text-2xl font-bold inline-block  bg-gradient-to-r from-[#6366f1] to-[#a855f7] bg-clip-text text-transparent"
+            >
               SK
             </div>
             <div

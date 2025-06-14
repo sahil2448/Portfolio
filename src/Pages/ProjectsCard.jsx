@@ -9,6 +9,7 @@ const ProjectsCard = ({
   buttonText1,
   buttonText2,
   buttonLink,
+  githubLink,
 }) => {
   const [isHovering, setIsHovering] = useState(false);
 
@@ -34,7 +35,7 @@ const ProjectsCard = ({
   return (
     <div
       ref={projectsCardRef}
-      className="card bg-base-100 shadow-xl overflow-hidden transition-all duration-300 hover:-translate-y-2  w-[90vw] sm:w-[50vw] md:w-[40vw] lg:w-[25rem]"
+      className="card bg-base-100 shadow-xl overflow-hidden transition-all duration-300 hover:-translate-y-2  w-[90vw] sm:w-[50vw] md:w-[40vw] lg:w-[25rem] group"
       onMouseEnter={() => setIsHovering(true)}
       onMouseLeave={() => setIsHovering(false)}
     >
@@ -44,23 +45,19 @@ const ProjectsCard = ({
         <img
           src={image}
           alt={title}
-          className="w-full h-full object-cover rounded-xl"
+          className="w-full h-full object-cover rounded-xl group-hover:scale-105 transition-all duration-300"
         />
 
-        {/* Overlay that appears on hover */}
         <div
-          className={`absolute inset-0 bg-black/70 flex items-center justify-center overflow-hidden transition-all duration-300 ${
+          className={`absolute inset-0 bg-black/30 flex items-center justify-center overflow-hidden transition-all duration-300 ${
             isHovering ? "opacity-100" : "opacity-0"
           }`}
         >
-          {/* Description container */}
           <div
             className={`p-6 w-full transition-transform duration-500 ${
               isHovering ? "translate-y-0" : "translate-y-full"
             }`}
-          >
-            <p className="text-white text-center">{description}</p>
-          </div>
+          ></div>
         </div>
       </figure>
 
@@ -69,30 +66,24 @@ const ProjectsCard = ({
         <h3 className="card-title text-xs sm:text-md md:text-lg">{title}</h3>
         <a
           href={buttonLink}
+          target="_blank"
           className="btn btn-primary text-xs px-2  sm:text-md lg:text-[0.9rem] sm:p-2  md:w-16"
         >
           {buttonText2}
         </a>
         <a
-          href={buttonLink}
+          href={githubLink}
+          target="_blank"
           className="btn btn-primary text-xs px-2 sm:text-md lg:text-[0.9rem] md:w-16"
         >
           {buttonText1}
         </a>
-        {/* Open the modal using document.getElementById('ID').showModal() method */}
-        {/* Open the modal using document.getElementById('ID').showModal() method */}
-        {/* <button
-          className="btn btn-outline btn-accent  w-16"
-          onClick={() => document.getElementById("my_modal_5").showModal()}
-        >
-          More
-        </button> */}
+
         <button
           onClick={() => document.getElementById("my_modal_5").showModal()}
-          className="group btn btn-soft bg-transparent relative overflow-hidden rounded-lg border-2 border-primary px-3 py-3 font-semibold text-primary transition-colors duration-300 hover:text-black"
+          className="group btn btn-soft bg-transparent relative overflow-hidden rounded-lg border-2 border-primary px-3 py-3 font-semibold text-primary transition-colors duration-300 hover:text-black hover:bg-primary"
         >
-          <span className="absolute bottom-0 left-0 h-0 w-full bg-primary transition-all duration-300 ease-out group-hover:h-full"></span>
-          <span className="relative z-10 ">More</span>
+          More
         </button>
         <dialog id="my_modal_5" className="modal modal-bottom sm:modal-middle">
           <div className="modal-box">
@@ -102,7 +93,6 @@ const ProjectsCard = ({
             </p>
             <div className="modal-action">
               <form method="dialog">
-                {/* if there is a button in form, it will close the modal */}
                 <button className="btn">Close</button>
               </form>
             </div>

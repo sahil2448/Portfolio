@@ -44,8 +44,8 @@ const Intro = () => {
   // For hover effect, you can use a CSS file or styled-components for more advanced interaction
   return (
     <div
+      className="text-base border border-indigo-950 hover:border-violet-600 transition-all duration-200"
       style={({ backgroundColor: "" }, containerStyle)}
-      className="text-base"
     >
       <ul style={listStyle}>
         <li style={liStyle}>

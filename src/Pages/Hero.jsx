@@ -42,21 +42,19 @@ const Hero = () => {
               </p>
             </div>
 
-            <div className="flex flex-col py-3 mb-1  p-6 ">
-              <ul className=" space-y-1  text-gray-300 ">
-                <li>
-                  {"- "}I'm a Passionate Full Stack Developer, problem solver &
+            <div className="flex flex-col  mb-1 lg:py-3 p-6 lg:px-0 ">
+              <div className=" space-y-1  text-gray-300 ">
+                <li className="text-base">
+                  I'm a Passionate Full Stack Developer, problem solver &
                   upcoming 3rd year student at IIT Roorkee.
                 </li>
-                <li>
-                  {"- "}Constantly improving my skills through project based
-                  learning.
+                <li className="text-base">
+                  Constantly improving my skills through project based learning.
                 </li>
-                <li>
-                  {" "}
-                  {"- "}I Like Building software Stuff and solving problems.
+                <li className="text-base">
+                  I Like Building software Stuff and solving problems.
                 </li>
-              </ul>
+              </div>
             </div>
 
             <div className="flex flex-col gap-8">
@@ -73,7 +71,7 @@ const Hero = () => {
 
                 <button className="group btn btn-soft bg-transparent  relative overflow-hidden rounded-lg border-2 border-primary  font-semibold text-primary transition-colors duration-300 hover:text-black">
                   <span className="absolute bottom-0 left-0 h-0  sm:w-full bg-primary transition-all duration-300 ease-out group-hover:h-full"></span>
-                  <a href="/Resume.pdf" download>
+                  <a href="/ResumeLatest.pdf" download>
                     <div className="flex justify-between items-center w-[30vw] sm:w-[7vw] group">
                       {" "}
                       <span className="relative z-10 ">My Resume</span>

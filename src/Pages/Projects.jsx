@@ -8,6 +8,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import NoteSphere from "/ProjectImages/NoteSphere.webp";
 import Wandarlust from "/ProjectImages/Wandarlust.png";
 import Todo from "/ProjectImages/Todo.png";
+import Calculator from "/ProjectImages/Calculator.png";
 import TedX from "/ProjectImages/TedX.webp";
 
 gsap.registerPlugin(ScrollTrigger);
@@ -46,7 +47,8 @@ const Projects = () => {
         image: `${Wandarlust}`,
         buttonText1: "Github",
         buttonText2: "Live",
-        buttonLink: "#",
+        buttonLink: "https://wanderlust-cg0y.onrender.com/",
+        githubLink: "https://github.com/sahil2448/WanderLust",
       },
       {
         id: 3,
@@ -55,7 +57,8 @@ const Projects = () => {
         image: `${TedX}`,
         buttonText1: "Github",
         buttonText2: "Live",
-        buttonLink: "#",
+        buttonLink: "https://www.tedxiitroorkee.in/",
+        githubLink: "https://github.com/TEDxIITR/TEDxIITR2025/tree/main",
       },
       {
         id: 2,
@@ -65,7 +68,8 @@ const Projects = () => {
         image: `${NoteSphere}`,
         buttonText1: "Github",
         buttonText2: "Live",
-        buttonLink: "#",
+        buttonLink: "https://spontaneous-stardust-0bdf9a.netlify.app/",
+        githubLink: "https://github.com/sahil2448/Syntax-Error-24",
       },
     ],
 
@@ -79,16 +83,18 @@ const Projects = () => {
         buttonText1: "Github",
         buttonText2: "Live",
         buttonLink: "#",
+        githubLink: "https://github.com/sahil2448/iTask",
       },
       {
         id: 4,
         title: "Calculator",
         description:
           "A smart and intuitive calculator designed for quick and easy calculations. Solve problems with ease, whether simple or complex!",
-        image: "default",
+        image: `${Calculator}`,
         buttonText1: "Github",
         buttonText2: "Live",
         buttonLink: "#",
+        githubLink: "https://github.com/sahil2448/Calculator-React.js",
       },
     ],
   };
@@ -133,6 +139,7 @@ const Projects = () => {
                 buttonText1={project.buttonText1}
                 buttonText2={project.buttonText2}
                 buttonLink={project.buttonLink}
+                githubLink={project.githubLink}
               />
             </div>
           ))}
