@@ -17,8 +17,8 @@ const Achievements = () => {
         {arr.map((item, idx) => (
           <li
             key={idx}
-            className="flex items-start gap-3 group rounded-lg p-3 transition-all duration-200 border border-sky-950 hover:border-violet-600"
-            style={{ backgroundColor: "rgba(7, 26, 47, 0.878)" }}
+            className="flex items-start bg-[#071A2C]/90 hover:bg-black/50 gap-3 group rounded-lg p-3 transition-all duration-200 border border-sky-950 hover:border-violet-600"
+            // style={{ backgroundColor: "rgba(7, 26, 47, 0.878)" }}
           >
             <FaCheckCircle className="mt-1 text-violet-600 transition-all duration-200 w-0 sm:w-[1vw]" />
             <span className=" text-base">{item}</span>

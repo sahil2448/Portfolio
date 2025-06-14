@@ -52,7 +52,7 @@ const Projects = () => {
         githubLink: "https://github.com/sahil2448/WanderLust",
       },
       {
-        id: 3,
+        id: 2,
         title: "TEDxIITRoorkee",
         description: "",
         image: `${TedX}`,
@@ -60,17 +60,6 @@ const Projects = () => {
         buttonText2: "Live",
         buttonLink: "https://www.tedxiitroorkee.in/",
         githubLink: "https://github.com/TEDxIITR/TEDxIITR2025/tree/main",
-      },
-      {
-        id: 2,
-        title: "Note-sphere",
-        description:
-          "The ultimate note-sharing hub! Upload, rate, like, and download notes effortlessly. Perfect for students looking for last-minute revision material before exams!",
-        image: `${NoteSphere}`,
-        buttonText1: "Github",
-        buttonText2: "Live",
-        buttonLink: "https://spontaneous-stardust-0bdf9a.netlify.app/",
-        githubLink: "https://github.com/sahil2448/Syntax-Error-24",
       },
       {
         id: 3,
@@ -81,6 +70,17 @@ const Projects = () => {
         buttonText2: "Live",
         buttonLink: "https://livecircle-f.onrender.com/",
         githubLink: "https://github.com/sahil2448/LiveCircle",
+      },
+      {
+        id: 4,
+        title: "Note-sphere",
+        description:
+          "The ultimate note-sharing hub! Upload, rate, like, and download notes effortlessly. Perfect for students looking for last-minute revision material before exams!",
+        image: `${NoteSphere}`,
+        buttonText1: "Github",
+        buttonText2: "Live",
+        buttonLink: "https://spontaneous-stardust-0bdf9a.netlify.app/",
+        githubLink: "https://github.com/sahil2448/Syntax-Error-24",
       },
     ],
 

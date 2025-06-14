@@ -4,12 +4,12 @@ const Skills = ({ name, tech }) => {
   return (
     <div className="flex flex-col items-center gap-4">
       <h1>{name}</h1>
-      <div className="flex flex-wrap max-w-[40rem] gap-4 justify-center border-y-2 border-sky-950">
+      <div className="flex flex-wrap max-w-[40rem] gap-4  justify-center border-y-2 border-sky-950">
         {tech.map((t) => (
           <div
             key={t.name}
             style={{
-              backgroundColor: "rgba(7, 26, 47, 0.878)",
+              // backgroundColor: "rgba(7, 26, 47, 0.878)",
               borderRadius: "3px",
               display: "flex",
               flexDirection: "column",
@@ -19,7 +19,7 @@ const Skills = ({ name, tech }) => {
               minHeight: "5rem",
               height: "fit-content",
             }}
-            className="border group border-gray-600 hover:border-violet-600   transition-all duration-150"
+            className="border group border-gray-600 hover:border-violet-600 bg-[#071A2C]/90 hover:bg-black/50  transition-all duration-150"
           >
             {" "}
             <img

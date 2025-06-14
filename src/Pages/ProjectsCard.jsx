@@ -35,17 +35,17 @@ const ProjectsCard = ({
   return (
     <div
       ref={projectsCardRef}
-      className="card bg-base-100 shadow-xl overflow-hidden transition-all duration-300 hover:-translate-y-2  w-[90vw] sm:w-[50vw] md:w-[40vw] lg:w-[25rem] group"
+      className="card bg-base-100 shadow-xl overflow-hidden transition-all duration-300 hover:-translate-y-2  w-[90vw] sm:w-[50vw] md:w-[40vw] lg:w-[25rem] "
       onMouseEnter={() => setIsHovering(true)}
       onMouseLeave={() => setIsHovering(false)}
     >
       {/* Image container with overlay */}
-      <figure className="relative h-64 w-full overflow-hidden p-2">
+      <figure className="relative h-64 w-full overflow-hidden p-2 group">
         {/* Project image */}
         <img
           src={image}
           alt={title}
-          className="w-full h-full object-cover rounded-xl group-hover:scale-105 transition-all duration-300"
+          className="w-full h-full object-cover rounded-xl group-hover:scale-[1.05] transition-all duration-300"
         />
 
         <div
@@ -81,9 +81,10 @@ const ProjectsCard = ({
 
         <button
           onClick={() => document.getElementById("my_modal_5").showModal()}
-          className="group btn btn-soft bg-transparent relative overflow-hidden rounded-lg border-2 border-primary px-3 py-3 font-semibold text-primary transition-colors duration-300 hover:text-black hover:bg-primary"
+          className="group btn btn-soft bg-transparent relative overflow-hidden rounded-lg border-2 border-primary px-3 py-3 font-semibold text-primary transition-colors duration-300 hover:text-black"
         >
-          More
+          <span className="absolute bottom-0 left-0 h-0 w-full bg-primary transition-all duration-300 ease-out group-hover:h-full"></span>
+          <span className="relative z-10 ">More</span>
         </button>
         <dialog id="my_modal_5" className="modal modal-bottom sm:modal-middle">
           <div className="modal-box">

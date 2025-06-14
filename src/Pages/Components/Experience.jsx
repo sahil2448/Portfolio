@@ -4,10 +4,12 @@ import { FaCheckCircle } from "react-icons/fa";
 const Experience = ({ org, position, techStack, timeline, description }) => {
   return (
     <div
-      style={{
-        backgroundColor: "rgba(7, 26, 47, 0.878)",
-      }}
-      className="w-[80vw] sm:w-[50vw] lg:w-[50vw] p-3 rounded-md border border-indigo-950 hover:border-violet-600 transition-all duration-300 cursor-pointer"
+      style={
+        {
+          // backgroundColor: "rgba(7, 26, 47, 0.878)",
+        }
+      }
+      className="w-[80vw] sm:w-[50vw] lg:w-[50vw] p-3 rounded-md border bg-[#071A2C]/90 hover:bg-black/50  border-indigo-950 hover:border-violet-600 transition-all duration-300 cursor-pointer"
     >
       <div className="flex justify-between flex-col md:flex-row">
         {" "}

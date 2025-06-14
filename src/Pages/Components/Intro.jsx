@@ -1,7 +1,6 @@
 import React from "react";
 
 const containerStyle = {
-  background: "rgba(7, 26, 47, 0.878)",
   borderRadius: "5px",
   padding: "1rem ",
   maxWidth: "[100%]",
@@ -37,18 +36,19 @@ const bulletStyle = {
 };
 
 const liHoverStyle = {
-  color: "#ff6bcb",
+  // color: "#ff6bcb",
+  // ml: "4rem",
 };
 
 const Intro = () => {
   // For hover effect, you can use a CSS file or styled-components for more advanced interaction
   return (
     <div
-      className="text-base border border-indigo-950 hover:border-violet-600 transition-all duration-200"
-      style={({ backgroundColor: "" }, containerStyle)}
+      className="text-base border border-indigo-950 bg-[#071A2C]/90 hover:bg-black/50 hover:border-violet-600 transition-all duration-200"
+      style={containerStyle}
     >
       <ul style={listStyle}>
-        <li style={liStyle}>
+        <li style={liStyle} className="">
           <span style={bulletStyle} className="bg-violet-700"></span>
           Hi... Myself Sahil Yuvraj Kamble.
         </li>

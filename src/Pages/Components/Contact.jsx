@@ -3,10 +3,12 @@ import PropTypes from "prop-types";
 const Contact = ({ type, icon, text, link }) => {
   return (
     <div
-      className="flex flex-col gap-4 p-3 rounded-md w-[18rem] lg:min-w-[15rem] max-w-[30rem] min-h-[7rem] border border-indigo-950 hover:border-violet-600 transition-all duration-300 "
-      style={{
-        backgroundColor: "rgba(7, 26, 47, 0.878)",
-      }}
+      className="flex flex-col gap-4 p-3 bg-[#071A2C]/90 hover:bg-black/50 rounded-md w-[18rem] lg:min-w-[15rem] max-w-[30rem] min-h-[7rem] border border-indigo-950 hover:border-violet-600 transition-all duration-300 "
+      style={
+        {
+          // backgroundColor: "rgba(7, 26, 47, 0.878)",
+        }
+      }
     >
       <li className="text-lg text-violet-500">{type}</li>
       <div className="flex items-center gap-4">
