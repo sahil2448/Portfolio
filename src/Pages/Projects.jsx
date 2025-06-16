@@ -93,8 +93,8 @@ const Projects = () => {
         image: `${Todo}`,
         buttonText1: "Github",
         buttonText2: "Live",
-        buttonLink: "#",
-        githubLink: "https://github.com/sahil2448/iTask",
+        buttonLink: "https://taskmanager-qikk.onrender.com/",
+        githubLink: "https://github.com/sahil2448/TaskManager",
       },
       {
         id: 4,
@@ -104,8 +104,8 @@ const Projects = () => {
         image: `${Calculator}`,
         buttonText1: "Github",
         buttonText2: "Live",
-        buttonLink: "#",
-        githubLink: "https://github.com/sahil2448/Calculator-React.js",
+        buttonLink: "https://calculator-cbv3.onrender.com/",
+        githubLink: "https://github.com/sahil2448/Calculator",
       },
     ],
   };
