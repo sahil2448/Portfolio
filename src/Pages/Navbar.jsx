@@ -89,7 +89,7 @@ const Navbar = () => {
   ];
 
   return (
-    <div className="sticky top:0 lg:top-5 z-50  backdrop-blur-md bg-opacity-40 bg-base-100 lg:w-[80%] lg:mx-auto border border-gray-600 md:rounded-3xl md:px-10">
+    <div className="sticky top:0 lg:top-5 z-50  backdrop-blur-md bg-opacity-40 bg-base-100 lg:w-[90%] lg:mx-auto border border-gray-600 md:rounded-3xl md:px-10">
       {isSmallScreen ? (
         // Mobile drawer navigation
         <div className="drawer drawer-end ">
@@ -168,9 +168,9 @@ const Navbar = () => {
             </div> */}
             <div
               onClick={() => scrollToSection("hero-section")}
-              className="relative cursor-pointer text-2xl font-bold inline-block  bg-gradient-to-r from-[#6366f1] to-[#a855f7] bg-clip-text text-transparent"
+              className="relative font-display cursor-pointer text-2xl font-bold inline-block  bg-gradient-to-r from-[#6366f1] to-[#a855f7] bg-clip-text text-transparent"
             >
-              SK
+              Sahil Kamble
             </div>
             <div
               ref={navItemsRef}

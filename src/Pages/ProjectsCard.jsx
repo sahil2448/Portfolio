@@ -45,7 +45,7 @@ const ProjectsCard = ({
         <img
           src={image}
           alt={title}
-          className="w-full h-full object-cover rounded-xl group-hover:scale-[1.05] transition-all duration-300"
+          className="w-full h-full object-cover rounded-xl group-hover:scale-[1.05] transition-all duration-700"
         />
 
         <div
