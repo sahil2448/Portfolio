@@ -5,6 +5,8 @@ import linkedin from "/ContactIcons/linkedin.webp";
 import profile from "/profile.webp";
 import BackgroundVideo from "./BackgroundVideo";
 import { FaFileDownload } from "react-icons/fa";
+import gsap from "gsap";
+import { useEffect, useRef } from "react";
 
 const Hero = () => {
   let icons = [
@@ -15,6 +17,32 @@ const Hero = () => {
     },
     { imgUrl: gmail, lk: "syk2448@gmail.com" },
   ];
+
+  const imgRef = useRef(null);
+  const contentRef = useRef(null);
+
+  useEffect(() => {
+    gsap.fromTo(
+      imgRef.current,
+      { x: 500, opacity: 0 },
+      { x: 0, opacity: 1, duration: 1, delay: 0.5 }
+    );
+
+    gsap.fromTo(
+      contentRef.current.children,
+      {
+        y: 1000,
+        opacity: 0,
+      },
+      {
+        y: 0,
+        opacity: 1,
+        duration: 0.8,
+        stagger: 0.1,
+        delay: 0.5,
+      }
+    );
+  });
   return (
     <div>
       <BackgroundVideo />
@@ -23,13 +51,19 @@ const Hero = () => {
         style={{ backgroundColor: "transparent" }}
       >
         <div className="hero-content flex-col lg:flex-row-reverse gap-10 mt-10 lg:mt-0">
-          <div className="avatar rounded-full lg:rounded-sm flex justify-start items-start p-2 border-2 border-primary w-[70vw] sm:w-[70vw] md:w-[40vw] lg:w-[28vw] xl:w-[30vw]">
+          <div
+            ref={imgRef}
+            className="avatar rounded-full lg:rounded-sm flex justify-start items-start p-2 border-2 border-primary w-[70vw] sm:w-[70vw] md:w-[40vw] lg:w-[28vw] xl:w-[30vw]"
+          >
             <div className=" rounded-full lg:rounded-sm">
               <img src={profile} className="" />
             </div>
           </div>
-          <div className="w-[90vw] md:w-[80vw]  lg:w-[60vw] flex flex-col justify-center items-center sm:items-start gap-4">
-            <div className=" py-2 px-3 border border-gray-600 rounded-3xl shadow-lg shadow-violet-700 absolute opacity-0 xl:opacity-80 top-[20%]">
+          <div
+            ref={contentRef}
+            className="w-[90vw] md:w-[80vw]  lg:w-[60vw] flex flex-col justify-center items-center sm:items-start gap-4"
+          >
+            <div className=" py-2 px-3 border border-gray-600 rounded-3xl shadow-lg shadow-violet-700 absolute invisible xl:visible top-[20%]">
               <h3 className="text-transparent bg-clip-text bg-gradient-to-r from-[#6366f1] to-[#a855f7] ">
                 Ready to innovate
               </h3>

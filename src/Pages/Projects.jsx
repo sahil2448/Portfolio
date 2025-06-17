@@ -43,8 +43,11 @@ const Projects = () => {
       {
         id: 1,
         title: "WandarLust",
-        description:
-          "Turn your space into a dream getaway! Host your place, set your rates, and welcome travelers from around the world. A seamless platform for both hosts and guests!",
+        description: [
+          "It’s a full-stack property hosting platform enables users to list, edit, and manage rental properties with images,detailed descriptions, and customizable per-day pricing.",
+          "Implemented advanced search and filtering features, allowing users to browse, rate, and review listings, as well assearch by destination and filter by categories for an enhanced user experience",
+          "Integrated dynamic pricing calculations with GST application, ensuring transparent and accurate price updates forboth hosts and guests",
+        ],
         image: `${Wandarlust}`,
         buttonText1: "Github",
         buttonText2: "Live",
@@ -54,7 +57,7 @@ const Projects = () => {
       {
         id: 2,
         title: "TEDxIITRoorkee",
-        description: "",
+        description: [""],
         image: `${TedX}`,
         buttonText1: "Github",
         buttonText2: "Live",
@@ -64,7 +67,7 @@ const Projects = () => {
       {
         id: 3,
         title: "LiveCircle",
-        description: "",
+        description: [""],
         image: `${LiveCircle}`,
         buttonText1: "Github",
         buttonText2: "Live",
@@ -74,8 +77,7 @@ const Projects = () => {
       {
         id: 4,
         title: "Note-sphere",
-        description:
-          "The ultimate note-sharing hub! Upload, rate, like, and download notes effortlessly. Perfect for students looking for last-minute revision material before exams!",
+        description: [""],
         image: `${NoteSphere}`,
         buttonText1: "Github",
         buttonText2: "Live",
@@ -88,8 +90,8 @@ const Projects = () => {
       {
         id: 3,
         title: "Todo Application",
-        description:
-          "Stay organized like never before! Effortlessly add, edit, delete, and check off tasks to keep track of your daily goals and boost productivity.",
+        description: [""],
+
         image: `${Todo}`,
         buttonText1: "Github",
         buttonText2: "Live",
@@ -99,8 +101,8 @@ const Projects = () => {
       {
         id: 4,
         title: "Calculator",
-        description:
-          "A smart and intuitive calculator designed for quick and easy calculations. Solve problems with ease, whether simple or complex!",
+        description: [""],
+
         image: `${Calculator}`,
         buttonText1: "Github",
         buttonText2: "Live",

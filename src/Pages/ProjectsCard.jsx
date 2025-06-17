@@ -5,11 +5,11 @@ import { useGSAP } from "@gsap/react";
 const ProjectsCard = ({
   image,
   title,
-  description,
   buttonText1,
   buttonText2,
   buttonLink,
   githubLink,
+  description,
 }) => {
   const [isHovering, setIsHovering] = useState(false);
 
@@ -86,12 +86,16 @@ const ProjectsCard = ({
           <span className="absolute bottom-0 left-0 h-0 w-full bg-primary transition-all duration-300 ease-out group-hover:h-full"></span>
           <span className="relative z-10 ">More</span>
         </button>
-        <dialog id="my_modal_5" className="modal modal-bottom sm:modal-middle">
-          <div className="modal-box">
-            <h3 className="font-bold text-lg">Hello!</h3>
-            <p className="py-4">
-              Press ESC key or click the button below to close
-            </p>
+        <dialog id="my_modal_5" className="modal modal-bottom sm:modal-middle ">
+          <div className="bg-gray-800 p-5 rounded-2xl min-w-[50vw] max-w-[70vw] ">
+            <h3 className="font-bold text-lg mb-2">Description!</h3>
+            <div className="flex flex-col gap-1 p-2  border border-gray-400 rounded-lg">
+              {description.map((item, idx) => {
+                return <p key={idx}> {item}</p>;
+              })}
+            </div>
+
+            <h3 className="font-bold text-lg">TechStack!</h3>
             <div className="modal-action">
               <form method="dialog">
                 <button className="btn">Close</button>

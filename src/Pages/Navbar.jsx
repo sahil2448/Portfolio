@@ -180,7 +180,8 @@ const Navbar = () => {
                 <button
                   key={index}
                   onClick={() => scrollToSection(item.id)}
-                  className="btn btn-ghost hover:text-primary transition-colors cursor-pointer"
+                  className="btn btn-ghost hover:text-primary transition-colors cursor-pointer
+                    "
                 >
                   {item.label}
                 </button>
