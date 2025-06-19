@@ -25,8 +25,8 @@ const Experience = ({ org, position, techStack, timeline, description }) => {
       }
     );
 
-    // Animate description items
-    const descriptionItems = experienceRef.current.querySelectorAll('.description-item');
+    const descriptionItems =
+      experienceRef.current.querySelectorAll(".description-item");
     gsap.fromTo(
       descriptionItems,
       {
@@ -43,29 +43,26 @@ const Experience = ({ org, position, techStack, timeline, description }) => {
       }
     );
 
-    // Hover animations
-    experienceRef.current.addEventListener('mouseenter', () => {
+    experienceRef.current.addEventListener("mouseenter", () => {
       gsap.to(experienceRef.current, {
         y: -5,
-        scale: 1.02,
-        duration: 0.3,
-        ease: "power2.out"
+        scale: 1,
+        duration: 0.05,
       });
     });
 
-    experienceRef.current.addEventListener('mouseleave', () => {
+    experienceRef.current.addEventListener("mouseleave", () => {
       gsap.to(experienceRef.current, {
         y: 0,
         scale: 1,
-        duration: 0.3,
-        ease: "power2.out"
+        duration: 0.05,
       });
     });
 
     return () => {
       if (experienceRef.current) {
-        experienceRef.current.removeEventListener('mouseenter', () => {});
-        experienceRef.current.removeEventListener('mouseleave', () => {});
+        experienceRef.current.removeEventListener("mouseenter", () => {});
+        experienceRef.current.removeEventListener("mouseleave", () => {});
       }
     };
   }, []);

@@ -10,7 +10,6 @@ const Skills = ({ name, tech }) => {
   useEffect(() => {
     const tl = gsap.timeline();
 
-    // Animate title
     tl.fromTo(
       titleRef.current,
       {
@@ -27,7 +26,6 @@ const Skills = ({ name, tech }) => {
       }
     );
 
-    // Animate icons with stagger
     tl.fromTo(
       iconsRef.current.children,
       {
@@ -51,51 +49,53 @@ const Skills = ({ name, tech }) => {
     // Add hover animations to each icon
     const icons = iconsRef.current.children;
     Array.from(icons).forEach((icon) => {
-      const img = icon.querySelector('img');
-      
-      icon.addEventListener('mouseenter', () => {
+      const img = icon.querySelector("img");
+
+      icon.addEventListener("mouseenter", () => {
         gsap.to(icon, {
           y: -10,
-          scale: 1.1,
+          scale: 1.08,
           rotation: 5,
-          duration: 0.3,
-          ease: "power2.out"
+          duration: 0.01,
+          ease: "power2.out",
         });
         gsap.to(img, {
-          scale: 1.2,
-          duration: 0.3,
-          ease: "power2.out"
+          scale: 1.1,
+          duration: 0.2,
+          ease: "power2.out",
         });
       });
 
-      icon.addEventListener('mouseleave', () => {
+      icon.addEventListener("mouseleave", () => {
         gsap.to(icon, {
           y: 0,
           scale: 1,
           rotation: 0,
-          duration: 0.3,
-          ease: "power2.out"
+          duration: 0.2,
+          ease: "power2.out",
         });
         gsap.to(img, {
           scale: 1,
-          duration: 0.3,
-          ease: "power2.out"
+          duration: 0.2,
+          ease: "power2.out",
         });
       });
     });
 
     return () => {
       Array.from(icons).forEach((icon) => {
-        icon.removeEventListener('mouseenter', () => {});
-        icon.removeEventListener('mouseleave', () => {});
+        icon.removeEventListener("mouseenter", () => {});
+        icon.removeEventListener("mouseleave", () => {});
       });
     };
   }, []);
 
   return (
     <div ref={skillsRef} className="flex flex-col items-center gap-4">
-      <h1 ref={titleRef} className="text-2xl font-bold text-violet-400">{name}</h1>
-      <div 
+      <h1 ref={titleRef} className="text-2xl font-bold text-violet-400">
+        {name}
+      </h1>
+      <div
         ref={iconsRef}
         className="flex flex-wrap max-w-[40rem] gap-4 justify-center border-y-2 border-sky-950 py-4"
       >

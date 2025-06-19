@@ -24,29 +24,26 @@ const Contact = ({ type, icon, text, link }) => {
       }
     );
 
-    // Hover animations
-    contactRef.current.addEventListener('mouseenter', () => {
+    contactRef.current.addEventListener("mouseenter", () => {
       gsap.to(contactRef.current, {
         y: -5,
-        scale: 1.02,
-        duration: 0.3,
-        ease: "power2.out"
+        scale: 1,
+        duration: 0.01,
       });
     });
 
-    contactRef.current.addEventListener('mouseleave', () => {
+    contactRef.current.addEventListener("mouseleave", () => {
       gsap.to(contactRef.current, {
         y: 0,
         scale: 1,
-        duration: 0.3,
-        ease: "power2.out"
+        duration: 0.01,
       });
     });
 
     return () => {
       if (contactRef.current) {
-        contactRef.current.removeEventListener('mouseenter', () => {});
-        contactRef.current.removeEventListener('mouseleave', () => {});
+        contactRef.current.removeEventListener("mouseenter", () => {});
+        contactRef.current.removeEventListener("mouseleave", () => {});
       }
     };
   }, []);

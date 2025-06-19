@@ -29,26 +29,25 @@ const Hero = () => {
   useEffect(() => {
     const tl = gsap.timeline({ delay: 0.3 });
 
-    // Animate profile image with rotation and scale
+
     tl.fromTo(
       imgRef.current,
-      { 
-        x: 300, 
-        opacity: 0, 
+      {
+        x: 300,
+        opacity: 0,
         rotation: 15,
-        scale: 0.8
+        scale: 0.8,
       },
-      { 
-        x: 0, 
-        opacity: 1, 
+      {
+        x: 0,
+        opacity: 1,
         rotation: 0,
         scale: 1,
-        duration: 1.2, 
-        ease: "back.out(1.7)" 
+        duration: 1.2,
+        ease: "back.out(1.7)",
       }
     );
 
-    // Animate main content with stagger
     tl.fromTo(
       contentRef.current.children,
       {
@@ -67,13 +66,12 @@ const Hero = () => {
       "-=0.8"
     );
 
-    // Animate floating badge
     tl.fromTo(
       badgeRef.current,
       {
         y: -50,
         opacity: 0,
-        scale: 0.5,
+        scale: 1,
       },
       {
         y: 0,
@@ -85,7 +83,6 @@ const Hero = () => {
       "-=0.4"
     );
 
-    // Animate buttons with bounce effect
     tl.fromTo(
       buttonsRef.current.children,
       {
@@ -97,14 +94,13 @@ const Hero = () => {
         y: 0,
         opacity: 1,
         scale: 1,
-        duration: 0.6,
+        duration: 0.2,
         stagger: 0.1,
         ease: "back.out(1.7)",
       },
       "-=0.3"
     );
 
-    // Animate social icons with rotation
     tl.fromTo(
       iconsRef.current.children,
       {
@@ -125,7 +121,6 @@ const Hero = () => {
       "-=0.4"
     );
 
-    // Continuous floating animation for badge
     gsap.to(badgeRef.current, {
       y: -10,
       duration: 2,
@@ -135,30 +130,30 @@ const Hero = () => {
       delay: 2,
     });
 
-    // Hover animations for profile image
-    const profileImg = imgRef.current.querySelector('img');
-    profileImg.addEventListener('mouseenter', () => {
+
+    const profileImg = imgRef.current.querySelector("img");
+    profileImg.addEventListener("mouseenter", () => {
       gsap.to(profileImg, {
         scale: 1.05,
         rotation: 2,
-        duration: 0.3,
-        ease: "power2.out"
+        duration: 0.03,
+        ease: "power2.out",
       });
     });
 
-    profileImg.addEventListener('mouseleave', () => {
+    profileImg.addEventListener("mouseleave", () => {
       gsap.to(profileImg, {
         scale: 1,
         rotation: 0,
-        duration: 0.3,
-        ease: "power2.out"
+        duration: 0.03,
+        ease: "power2.out",
       });
     });
 
-    // Cleanup
+
     return () => {
-      profileImg.removeEventListener('mouseenter', () => {});
-      profileImg.removeEventListener('mouseleave', () => {});
+      profileImg.removeEventListener("mouseenter", () => {});
+      profileImg.removeEventListener("mouseleave", () => {});
     };
   }, []);
 
@@ -175,14 +170,17 @@ const Hero = () => {
             className="avatar rounded-full lg:rounded-sm flex justify-start items-start p-2 border-2 border-primary w-[70vw] sm:w-[70vw] md:w-[40vw] lg:w-[28vw] xl:w-[30vw] hover:border-violet-500 transition-colors duration-300"
           >
             <div className="rounded-full lg:rounded-sm overflow-hidden">
-              <img src={profile} className="transition-transform duration-300" />
+              <img
+                src={profile}
+                className="transition-transform duration-300"
+              />
             </div>
           </div>
           <div
             ref={contentRef}
             className="w-[90vw] md:w-[80vw] lg:w-[60vw] flex flex-col justify-center items-center sm:items-start gap-4"
           >
-            <div 
+            <div
               ref={badgeRef}
               className="py-2 px-3 border border-gray-600 rounded-3xl shadow-lg shadow-violet-700 absolute invisible xl:visible top-[20%]"
             >
@@ -219,7 +217,10 @@ const Hero = () => {
             </div>
 
             <div className="flex flex-col gap-8">
-              <div ref={buttonsRef} className="flex flex-row gap-3 sm:w-full sm:gap-5">
+              <div
+                ref={buttonsRef}
+                className="flex flex-row gap-3 sm:w-full sm:gap-5"
+              >
                 <button
                   className="btn btn-primary hover:scale-105 transition-transform duration-200"
                   onClick={() => {
@@ -240,7 +241,10 @@ const Hero = () => {
                   </a>
                 </button>
               </div>
-              <div ref={iconsRef} className="flex justify-center gap-5 sm:gap-10">
+              <div
+                ref={iconsRef}
+                className="flex justify-center gap-5 sm:gap-10"
+              >
                 {icons.map((image, idx) => {
                   return (
                     <a key={idx} href={image.lk} target="_blank">

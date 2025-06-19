@@ -89,10 +89,8 @@ const About = () => {
   const titleRef = useRef(null);
   const buttonsRef = useRef(null);
 
-  // Scroll trigger animation for section entrance
-  useGSAP(() => {
-    // Title animation
-    gsap.fromTo(
+
+  useGSAP(() => {    gsap.fromTo(
       titleRef.current,
       {
         y: -50,
@@ -114,7 +112,7 @@ const About = () => {
       }
     );
 
-    // Buttons animation
+
     gsap.fromTo(
       buttonsRef.current.children,
       {
@@ -142,7 +140,7 @@ const About = () => {
   // Content change animation
   useGSAP(() => {
     const tl = gsap.timeline();
-    
+
     // Animate out current content
     tl.to(contentRef.current.children, {
       opacity: 0,
@@ -151,29 +149,27 @@ const About = () => {
       stagger: 0.05,
       ease: "power2.in",
     })
-    // Animate in new content
-    .fromTo(
-      contentRef.current.children,
-      {
-        opacity: 0,
-        y: 50,
-        rotationX: -15,
-        scale: 0.95,
-      },
-      {
-        opacity: 1,
-        y: 0,
-        rotationX: 0,
-        scale: 1,
-        duration: 0.6,
-        stagger: 0.1,
-        ease: "back.out(1.7)",
-      }
-    );
+      .fromTo(
+        contentRef.current.children,
+        {
+          opacity: 0,
+          y: 50,
+          rotationX: -15,
+          scale: 1,
+        },
+        {
+          opacity: 1,
+          y: 0,
+          rotationX: 0,
+          scale: 1,
+          duration: 0.6,
+          stagger: 0.3,
+          ease: "back.out(1.7)",
+        }
+      );
   }, [activeSection]);
 
   const handleSectionChange = (section) => {
-    // Add click animation to button
     const clickedButton = event.target;
     gsap.to(clickedButton, {
       scale: 0.95,
@@ -182,7 +178,7 @@ const About = () => {
       repeat: 1,
       ease: "power2.inOut",
     });
-    
+
     setActiveSection(section);
   };
 
@@ -319,7 +315,7 @@ const About = () => {
 
   return (
     <section ref={sectionRef} id="about-section" className="pt-10 min-h-screen">
-      <h1 
+      <h1
         ref={titleRef}
         className="relative text-5xl font-bold text-center font-heading bg-gradient-to-r from-[#6366f1] to-[#a855f7] bg-clip-text text-transparent"
       >
@@ -327,7 +323,10 @@ const About = () => {
       </h1>
       <div className="min-h-screen py-12">
         <div className="flex flex-col gap-10 sm:flex-row sm:gap-0 lg:gap-10 max-w-7xl mx-auto justify-evenly items-center">
-          <div ref={buttonsRef} className="join flex flex-col justify-center w-full sm:w-[40vw] md:w-[30vw] lg:w-[30vw] space-y-4">
+          <div
+            ref={buttonsRef}
+            className="join flex flex-col justify-center w-full sm:w-[40vw] md:w-[30vw] lg:w-[30vw] space-y-4"
+          >
             {sections.map((section) => {
               return (
                 <div className="w-[80%] mx-auto" key={section}>

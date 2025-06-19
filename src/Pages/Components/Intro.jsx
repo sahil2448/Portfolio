@@ -57,16 +57,13 @@ const Intro = () => {
       }
     );
 
-    // Animate list items
     const listItems = listItemsRef.current.children;
     gsap.fromTo(
       listItems,
       {
-        x: -50,
         opacity: 0,
       },
       {
-        x: 0,
         opacity: 1,
         duration: 0.5,
         stagger: 0.1,
@@ -75,31 +72,30 @@ const Intro = () => {
       }
     );
 
-    // Add hover animations to list items
     Array.from(listItems).forEach((item) => {
-      item.addEventListener('mouseenter', () => {
+      item.addEventListener("mouseenter", () => {
         gsap.to(item, {
           x: 10,
-          scale: 1.02,
+          scale: 1,
           duration: 0.3,
-          ease: "power2.out"
+          ease: "power2.out",
         });
       });
 
-      item.addEventListener('mouseleave', () => {
+      item.addEventListener("mouseleave", () => {
         gsap.to(item, {
           x: 0,
           scale: 1,
           duration: 0.3,
-          ease: "power2.out"
+          ease: "power2.out",
         });
       });
     });
 
     return () => {
       Array.from(listItems).forEach((item) => {
-        item.removeEventListener('mouseenter', () => {});
-        item.removeEventListener('mouseleave', () => {});
+        item.removeEventListener("mouseenter", () => {});
+        item.removeEventListener("mouseleave", () => {});
       });
     };
   }, []);
@@ -111,15 +107,24 @@ const Intro = () => {
       style={containerStyle}
     >
       <ul ref={listItemsRef} style={listStyle}>
-        <li style={liStyle} className="hover:text-violet-200 transition-colors duration-200">
+        <li
+          style={liStyle}
+          className="hover:text-violet-200 transition-colors duration-200"
+        >
           <span style={bulletStyle} className="bg-violet-700"></span>
           Hi... Myself Sahil Yuvraj Kamble.
         </li>
-        <li style={liStyle} className="hover:text-violet-200 transition-colors duration-200">
+        <li
+          style={liStyle}
+          className="hover:text-violet-200 transition-colors duration-200"
+        >
           <span style={bulletStyle} className="bg-violet-700"></span>
           My origin is Kolhapur, Maharashtra.
         </li>
-        <li style={liStyle} className="hover:text-violet-200 transition-colors duration-200">
+        <li
+          style={liStyle}
+          className="hover:text-violet-200 transition-colors duration-200"
+        >
           <span style={bulletStyle} className="bg-violet-700"></span>
           Just finished my 2nd year at IIT Roorkee! I am truly passionate about
           technology. From my very first year, I have been exploring
@@ -129,14 +134,20 @@ const Intro = () => {
           learning, and also doing competitive programming to improve my problem
           solving skills.
         </li>
-        <li style={liStyle} className="hover:text-violet-200 transition-colors duration-200">
+        <li
+          style={liStyle}
+          className="hover:text-violet-200 transition-colors duration-200"
+        >
           <span style={bulletStyle} className="bg-violet-700"></span>
           IIT Roorkee gives amazing exposure in different fields, and I try to
           make the most of it by taking part in coding events and hackathons. I
           have also contributed as a web developer for well-known
           club-TEDxIITRoorkee and NSS IIT Roorkee.
         </li>
-        <li style={liStyle} className="hover:text-violet-200 transition-colors duration-200">
+        <li
+          style={liStyle}
+          className="hover:text-violet-200 transition-colors duration-200"
+        >
           <span style={bulletStyle} className="bg-violet-700"></span>
           Looking forward to build something impactful with like minded people.
         </li>

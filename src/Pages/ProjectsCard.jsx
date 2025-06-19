@@ -42,78 +42,50 @@ const ProjectsCard = ({
     const buttons = buttonsRef.current.children;
 
     // Card hover animations
-    card.addEventListener('mouseenter', () => {
-      gsap.to(card, {
-        y: -10,
-        scale: 1.02,
-        duration: 0.3,
-        ease: "power2.out"
-      });
-      
+    card.addEventListener("mouseenter", () => {
       gsap.to(image, {
-        scale: 1.1,
-        duration: 0.5,
-        ease: "power2.out"
+        scale: 1.05,
+        duration: 0.001,
+        ease: "power2.out",
       });
 
       // Animate buttons on hover
       gsap.to(buttons, {
-        scale: 1.05,
+        scale: 1,
         duration: 0.2,
         stagger: 0.05,
-        ease: "power2.out"
+        ease: "power2.out",
       });
     });
 
-    card.addEventListener('mouseleave', () => {
+    card.addEventListener("mouseleave", () => {
       gsap.to(card, {
         y: 0,
         scale: 1,
         duration: 0.3,
-        ease: "power2.out"
+        ease: "power2.out",
       });
-      
+
       gsap.to(image, {
         scale: 1,
-        duration: 0.5,
-        ease: "power2.out"
+        duration: 0.1,
+        ease: "power2.out",
       });
 
       gsap.to(buttons, {
         scale: 1,
         duration: 0.2,
         stagger: 0.05,
-        ease: "power2.out"
-      });
-    });
-
-    // Individual button hover animations
-    Array.from(buttons).forEach((button) => {
-      button.addEventListener('mouseenter', () => {
-        gsap.to(button, {
-          scale: 1.1,
-          y: -2,
-          duration: 0.2,
-          ease: "power2.out"
-        });
-      });
-
-      button.addEventListener('mouseleave', () => {
-        gsap.to(button, {
-          scale: 1,
-          y: 0,
-          duration: 0.2,
-          ease: "power2.out"
-        });
+        ease: "power2.out",
       });
     });
 
     return () => {
-      card.removeEventListener('mouseenter', () => {});
-      card.removeEventListener('mouseleave', () => {});
+      card.removeEventListener("mouseenter", () => {});
+      card.removeEventListener("mouseleave", () => {});
       Array.from(buttons).forEach((button) => {
-        button.removeEventListener('mouseenter', () => {});
-        button.removeEventListener('mouseleave', () => {});
+        button.removeEventListener("mouseenter", () => {});
+        button.removeEventListener("mouseleave", () => {});
       });
     };
   }, []);
@@ -121,13 +93,11 @@ const ProjectsCard = ({
   return (
     <div
       ref={projectsCardRef}
-      className="card bg-base-100 shadow-xl overflow-hidden transition-all duration-300 w-[90vw] sm:w-[50vw] md:w-[40vw] lg:w-[25rem] border border-violet-500/20 hover:border-violet-500/50"
+      className="card bg-base-100 shadow-xl overflow-hidden transition-all  w-[90vw] sm:w-[50vw] md:w-[40vw] lg:w-[25rem] border-b-4 border-violet-500/20 hover:border-violet-500 hover:rounded-lg  duration-300"
       onMouseEnter={() => setIsHovering(true)}
       onMouseLeave={() => setIsHovering(false)}
     >
-      {/* Image container with overlay */}
       <figure className="relative h-64 w-full overflow-hidden p-2 group">
-        {/* Project image */}
         <img
           ref={imageRef}
           src={image}
@@ -175,20 +145,26 @@ const ProjectsCard = ({
             <span className="relative z-10">More</span>
           </button>
         </div>
-        
+
         <dialog id="my_modal_5" className="modal modal-bottom sm:modal-middle">
           <div className="bg-gray-800 p-5 rounded-2xl min-w-[50vw] max-w-[70vw] border border-violet-500/30">
-            <h3 className="font-bold text-lg mb-2 text-violet-400">Description!</h3>
+            <h3 className="font-bold text-lg mb-2 text-violet-400">
+              Description!
+            </h3>
             <div className="flex flex-col gap-1 p-2 border border-gray-400 rounded-lg">
               {description.map((item, idx) => {
                 return <p key={idx}>{item}</p>;
               })}
             </div>
 
-            <h3 className="font-bold text-lg text-violet-400 mt-4">TechStack!</h3>
+            <h3 className="font-bold text-lg text-violet-400 mt-4">
+              TechStack!
+            </h3>
             <div className="modal-action">
               <form method="dialog">
-                <button className="btn hover:scale-105 transition-transform duration-200">Close</button>
+                <button className="btn hover:scale-105 transition-transform duration-200">
+                  Close
+                </button>
               </form>
             </div>
           </div>

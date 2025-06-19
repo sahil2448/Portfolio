@@ -61,10 +61,10 @@ const Navbar = () => {
     }
   }, []);
 
-  // Theme effect
+
   useEffect(() => {
     document.documentElement.setAttribute("data-theme", "dark");
-    // Optionally, clear any previous theme in localStorage
+
     localStorage.removeItem("theme");
   }, []);
 
@@ -74,7 +74,7 @@ const Navbar = () => {
       drawerCheckbox.checked = false;
     }
 
-    // Finding the target section
+
     const element = document.getElementById(sectionId);
     if (element) {
       element.scrollIntoView({ behavior: "smooth" });
@@ -91,16 +91,13 @@ const Navbar = () => {
   return (
     <div className="sticky top:0 lg:top-5 z-50  backdrop-blur-md bg-opacity-40 bg-base-100 lg:w-[90%] lg:mx-auto border border-gray-600 md:rounded-3xl md:px-10">
       {isSmallScreen ? (
-        // Mobile drawer navigation
+
         <div className="drawer drawer-end ">
           <input id="navbar-drawer" type="checkbox" className="drawer-toggle" />
           <div className="drawer-content">
             <nav className="max-w-7xl mx-auto p-4 ">
               <div ref={navRef} className="flex items-center justify-between">
-                {/* <div className="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-primary to-secondary"> */}
-                {/* <div className="text-2xl font-bold bg-clip-text text-transparent !text-sky-500">
-                  Portfolio
-                </div> */}
+
                 <div
                   onClick={() => scrollToSection("hero-section")}
                   className="relative cursor-pointer inline-block mt-2 bg-gradient-to-r from-[#6366f1] to-[#a855f7] bg-clip-text text-transparent"
@@ -159,13 +156,10 @@ const Navbar = () => {
           </div>
         </div>
       ) : (
-        // Desktop navigation
+
         <nav className="max-w-7xl mx-auto p-4 ">
           <div ref={navRef} className="flex items-center justify-between">
-            {/* <div className="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-primary to-secondary"> */}
-            {/* <div className="text-2xl font-bold bg-clip-text text-transparent !text-sky-500">
-              Portfolio
-            </div> */}
+
             <div
               onClick={() => scrollToSection("hero-section")}
               className="relative font-display cursor-pointer text-2xl font-bold inline-block  bg-gradient-to-r from-[#6366f1] to-[#a855f7] bg-clip-text text-transparent"
@@ -190,7 +184,7 @@ const Navbar = () => {
           </div>
         </nav>
       )}
-      {/* <hr className="w-[100%] mx-auto border-gray-600" /> */}
+
     </div>
   );
 };

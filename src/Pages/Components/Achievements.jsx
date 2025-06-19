@@ -33,32 +33,31 @@ const Achievements = () => {
       }
     );
 
-    // Add hover animations
     const items = achievementsRef.current.children;
     Array.from(items).forEach((item) => {
-      item.addEventListener('mouseenter', () => {
+      item.addEventListener("mouseenter", () => {
         gsap.to(item, {
           x: 10,
-          scale: 1.02,
-          duration: 0.3,
-          ease: "power2.out"
+          scale: 1,
+          duration: 0.05,
+          ease: "power2.out",
         });
       });
 
-      item.addEventListener('mouseleave', () => {
+      item.addEventListener("mouseleave", () => {
         gsap.to(item, {
           x: 0,
           scale: 1,
-          duration: 0.3,
-          ease: "power2.out"
+          duration: 0.05,
+          ease: "power2.out",
         });
       });
     });
 
     return () => {
       Array.from(items).forEach((item) => {
-        item.removeEventListener('mouseenter', () => {});
-        item.removeEventListener('mouseleave', () => {});
+        item.removeEventListener("mouseenter", () => {});
+        item.removeEventListener("mouseleave", () => {});
       });
     };
   }, []);
@@ -72,7 +71,9 @@ const Achievements = () => {
             className="flex items-start bg-[#071A2C]/90 hover:bg-black/50 gap-3 group rounded-lg p-3 transition-all duration-300 border border-sky-950 hover:border-violet-600 cursor-pointer"
           >
             <FaCheckCircle className="mt-1 text-violet-600 transition-all duration-200 w-0 sm:w-[1vw] group-hover:text-violet-400" />
-            <span className="text-base group-hover:text-violet-100 transition-colors duration-200">{item}</span>
+            <span className="text-base group-hover:text-violet-100 transition-colors duration-200">
+              {item}
+            </span>
           </li>
         ))}
       </ul>

@@ -10,7 +10,7 @@ const Education = ({ level, degree, year, name }) => {
       {
         y: 50,
         opacity: 0,
-        scale: 0.9,
+        scale: 1,
         rotationY: -10,
       },
       {
@@ -23,31 +23,27 @@ const Education = ({ level, degree, year, name }) => {
       }
     );
 
-    // Hover animations
-    educationRef.current.addEventListener('mouseenter', () => {
+    educationRef.current.addEventListener("mouseenter", () => {
       gsap.to(educationRef.current, {
         y: -8,
-        scale: 1.03,
-        rotationY: 2,
-        duration: 0.3,
-        ease: "power2.out"
+        scale: 1,
+        duration: 0.05,
       });
     });
 
-    educationRef.current.addEventListener('mouseleave', () => {
+    educationRef.current.addEventListener("mouseleave", () => {
       gsap.to(educationRef.current, {
         y: 0,
         scale: 1,
         rotationY: 0,
-        duration: 0.3,
-        ease: "power2.out"
+        duration: 0.1,
       });
     });
 
     return () => {
       if (educationRef.current) {
-        educationRef.current.removeEventListener('mouseenter', () => {});
-        educationRef.current.removeEventListener('mouseleave', () => {});
+        educationRef.current.removeEventListener("mouseenter", () => {});
+        educationRef.current.removeEventListener("mouseleave", () => {});
       }
     };
   }, []);

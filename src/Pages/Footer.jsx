@@ -20,7 +20,7 @@ function Footer() {
     },
     { imgUrl: gmail, lk: "syk2448@gmail.com" },
   ];
-  
+
   let navItems = [
     { Name: "Home", section: "hero-section" },
     { Name: "About", section: "about-section" },
@@ -29,7 +29,6 @@ function Footer() {
   ];
 
   useEffect(() => {
-    // Footer entrance animation
     gsap.fromTo(
       footerRef.current,
       {
@@ -50,7 +49,6 @@ function Footer() {
       }
     );
 
-    // Navigation items animation
     gsap.fromTo(
       navRef.current.children,
       {
@@ -65,14 +63,13 @@ function Footer() {
         ease: "back.out(1.7)",
         scrollTrigger: {
           trigger: navRef.current,
-          start: "top 90%",
+          start: "top 95%",
           end: "top 70%",
           toggleActions: "play none none reverse",
         },
       }
     );
 
-    // Icons animation
     gsap.fromTo(
       iconsRef.current.children,
       {
@@ -89,76 +86,77 @@ function Footer() {
         ease: "back.out(1.7)",
         scrollTrigger: {
           trigger: iconsRef.current,
-          start: "top 90%",
+          start: "top 95%",
           end: "top 70%",
           toggleActions: "play none none reverse",
         },
       }
     );
 
-    // Add hover animations to icons
     const iconElements = iconsRef.current.children;
     Array.from(iconElements).forEach((icon) => {
-      const img = icon.querySelector('img');
-      
-      icon.addEventListener('mouseenter', () => {
+      const img = icon.querySelector("img");
+
+      icon.addEventListener("mouseenter", () => {
         gsap.to(img, {
           scale: 1.2,
           rotation: 10,
           y: -5,
           duration: 0.3,
-          ease: "power2.out"
+          ease: "power2.out",
         });
       });
 
-      icon.addEventListener('mouseleave', () => {
+      icon.addEventListener("mouseleave", () => {
         gsap.to(img, {
           scale: 1,
           rotation: 0,
           y: 0,
           duration: 0.3,
-          ease: "power2.out"
+          ease: "power2.out",
         });
       });
     });
 
-    // Add hover animations to nav items
     const navElements = navRef.current.children;
     Array.from(navElements).forEach((navItem) => {
-      navItem.addEventListener('mouseenter', () => {
+      navItem.addEventListener("mouseenter", () => {
         gsap.to(navItem, {
           scale: 1.05,
           y: -2,
           duration: 0.2,
-          ease: "power2.out"
+          ease: "power2.out",
         });
       });
 
-      navItem.addEventListener('mouseleave', () => {
+      navItem.addEventListener("mouseleave", () => {
         gsap.to(navItem, {
           scale: 1,
           y: 0,
           duration: 0.2,
-          ease: "power2.out"
+          ease: "power2.out",
         });
       });
     });
 
     return () => {
       Array.from(iconElements).forEach((icon) => {
-        icon.removeEventListener('mouseenter', () => {});
-        icon.removeEventListener('mouseleave', () => {});
+        icon.removeEventListener("mouseenter", () => {});
+        icon.removeEventListener("mouseleave", () => {});
       });
       Array.from(navElements).forEach((navItem) => {
-        navItem.removeEventListener('mouseenter', () => {});
-        navItem.removeEventListener('mouseleave', () => {});
+        navItem.removeEventListener("mouseenter", () => {});
+        navItem.removeEventListener("mouseleave", () => {});
       });
     };
   }, []);
 
   return (
     <div>
-      <footer ref={footerRef} className="footer footer-horizontal footer-center text-base-content rounded p-10">
+      <footer
+        ref={footerRef}
+        className="footer footer-horizontal footer-center text-base-content rounded p-10"
+      >
         <nav ref={navRef} className="grid grid-flow-col gap-4">
           {navItems.map((item, idx) => {
             return (

@@ -11,13 +11,13 @@ export const ContactPage = () => {
   const form = useRef();
   const [sent, setSent] = useState(false);
   const [error, setError] = useState(null);
-  
+
   const sectionRef = useRef(null);
   const titleRef = useRef(null);
   const formRef = useRef(null);
 
   useGSAP(() => {
-    // Title animation
+
     gsap.fromTo(
       titleRef.current,
       {
@@ -40,7 +40,7 @@ export const ContactPage = () => {
       }
     );
 
-    // Form animation
+
     gsap.fromTo(
       formRef.current,
       {
@@ -63,23 +63,25 @@ export const ContactPage = () => {
       }
     );
 
-    // Form fields animation
-    const formFields = formRef.current.querySelectorAll('input, textarea, button');
+
+    const formFields = formRef.current.querySelectorAll(
+      "input, textarea, button"
+    );
     gsap.fromTo(
       formFields,
       {
-        x: -50,
+
         opacity: 0,
       },
       {
-        x: 0,
+
         opacity: 1,
-        duration: 0.5,
+        duration: 0.3,
         stagger: 0.1,
         ease: "power2.out",
         scrollTrigger: {
           trigger: formRef.current,
-          start: "top 70%",
+          start: "top 80%",
           end: "top 40%",
           toggleActions: "play none none reverse",
         },
@@ -112,24 +114,26 @@ export const ContactPage = () => {
       .then((result) => {
         setSent(true);
         form.current.reset();
-        
+
         // Success animation
-        gsap.fromTo(submitButton, {
-          backgroundColor: "#10b981",
-          scale: 1.05,
-        }, {
-          backgroundColor: "",
-          scale: 1,
-          duration: 0.5,
-          ease: "power2.out"
-        });
+        gsap.fromTo(
+          submitButton,
+          {
+            backgroundColor: "#10b981",
+            scale: 1.05,
+          },
+          {
+            backgroundColor: "",
+            scale: 1,
+            duration: 0.5,
+            ease: "power2.out",
+          }
+        );
       })
       .catch((error) => {
         setError("Failed to send message. Please try again.");
       });
   };
-
-  // Close alert manually
   const handleClose = () => {
     setSent(false);
     setError(null);
@@ -148,15 +152,15 @@ export const ContactPage = () => {
       </div>
     );
   };
-  
+
   let handleError = () => {
     return (
       <div className="toast toast-end">
         <div className="alert alert-error flex justify-between animate-pulse">
           <span>Some error occurred.</span>
-          <CiSquareRemove 
-            onClick={handleClose} 
-            className="cursor-pointer hover:scale-110 transition-transform duration-200" 
+          <CiSquareRemove
+            onClick={handleClose}
+            className="cursor-pointer hover:scale-110 transition-transform duration-200"
           />
         </div>
       </div>
@@ -164,8 +168,11 @@ export const ContactPage = () => {
   };
 
   return (
-    <div ref={sectionRef} className="contact-form-container min-h-screen flex flex-col justify-center items-center py-16 px-4">
-      <h1 
+    <div
+      ref={sectionRef}
+      className="contact-form-container min-h-screen flex flex-col justify-center items-center py-16 px-4"
+    >
+      <h1
         ref={titleRef}
         className="relative text-5xl font-bold text-center font-heading bg-gradient-to-r from-[#6366f1] to-[#a855f7] bg-clip-text text-transparent"
       >
@@ -234,8 +241,8 @@ export const ContactPage = () => {
                 style={{ backgroundColor: "rgba(7, 26, 47, 0.878)" }}
               />
             </div>
-            <button 
-              type="submit" 
+            <button
+              type="submit"
               className="btn btn-primary w-full hover:scale-105 transition-all duration-200 hover:shadow-lg hover:shadow-violet-500/30"
             >
               Send Message
