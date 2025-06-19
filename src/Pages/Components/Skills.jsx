@@ -1,15 +1,108 @@
 import PropTypes from "prop-types";
+import { useRef, useEffect } from "react";
+import gsap from "gsap";
 
 const Skills = ({ name, tech }) => {
+  const skillsRef = useRef(null);
+  const titleRef = useRef(null);
+  const iconsRef = useRef(null);
+
+  useEffect(() => {
+    const tl = gsap.timeline();
+
+    // Animate title
+    tl.fromTo(
+      titleRef.current,
+      {
+        y: -30,
+        opacity: 0,
+        scale: 0.8,
+      },
+      {
+        y: 0,
+        opacity: 1,
+        scale: 1,
+        duration: 0.6,
+        ease: "back.out(1.7)",
+      }
+    );
+
+    // Animate icons with stagger
+    tl.fromTo(
+      iconsRef.current.children,
+      {
+        y: 50,
+        opacity: 0,
+        scale: 0,
+        rotation: 180,
+      },
+      {
+        y: 0,
+        opacity: 1,
+        scale: 1,
+        rotation: 0,
+        duration: 0.5,
+        stagger: 0.1,
+        ease: "back.out(1.7)",
+      },
+      "-=0.3"
+    );
+
+    // Add hover animations to each icon
+    const icons = iconsRef.current.children;
+    Array.from(icons).forEach((icon) => {
+      const img = icon.querySelector('img');
+      
+      icon.addEventListener('mouseenter', () => {
+        gsap.to(icon, {
+          y: -10,
+          scale: 1.1,
+          rotation: 5,
+          duration: 0.3,
+          ease: "power2.out"
+        });
+        gsap.to(img, {
+          scale: 1.2,
+          duration: 0.3,
+          ease: "power2.out"
+        });
+      });
+
+      icon.addEventListener('mouseleave', () => {
+        gsap.to(icon, {
+          y: 0,
+          scale: 1,
+          rotation: 0,
+          duration: 0.3,
+          ease: "power2.out"
+        });
+        gsap.to(img, {
+          scale: 1,
+          duration: 0.3,
+          ease: "power2.out"
+        });
+      });
+    });
+
+    return () => {
+      Array.from(icons).forEach((icon) => {
+        icon.removeEventListener('mouseenter', () => {});
+        icon.removeEventListener('mouseleave', () => {});
+      });
+    };
+  }, []);
+
   return (
-    <div className="flex flex-col items-center gap-4">
-      <h1>{name}</h1>
-      <div className="flex flex-wrap max-w-[40rem] gap-4  justify-center border-y-2 border-sky-950">
+    <div ref={skillsRef} className="flex flex-col items-center gap-4">
+      <h1 ref={titleRef} className="text-2xl font-bold text-violet-400">{name}</h1>
+      <div 
+        ref={iconsRef}
+        className="flex flex-wrap max-w-[40rem] gap-4 justify-center border-y-2 border-sky-950 py-4"
+      >
         {tech.map((t) => (
           <div
             key={t.name}
             style={{
-              // backgroundColor: "rgba(7, 26, 47, 0.878)",
               borderRadius: "3px",
               display: "flex",
               flexDirection: "column",
@@ -19,9 +112,8 @@ const Skills = ({ name, tech }) => {
               minHeight: "5rem",
               height: "fit-content",
             }}
-            className="border group border-gray-600 hover:border-violet-600 bg-[#071A2C]/90 hover:bg-black/50  transition-all duration-150"
+            className="border group border-gray-600 hover:border-violet-600 bg-[#071A2C]/90 hover:bg-black/50 transition-all duration-300 cursor-pointer"
           >
-            {" "}
             <img
               style={{
                 width: "3rem",
@@ -30,7 +122,7 @@ const Skills = ({ name, tech }) => {
                 marginTop: "10px",
                 borderRadius: "0.9rem",
               }}
-              className="transition-all duration-150 group-hover:scale-110 group-hover:shadow-lg group-hover:shadow-purple-800"
+              className="transition-all duration-300"
               src={t.src}
               alt={t.name}
               title={t.name}
@@ -52,4 +144,5 @@ Skills.propTypes = {
     })
   ).isRequired,
 };
+
 export default Skills;

@@ -1,30 +1,67 @@
-import React from "react";
+import React, { useRef, useEffect } from "react";
+import gsap from "gsap";
 
-/**
- * A functional component that renders a single education entry.
- * @param {object} props
- * @param {string} props.level - The level of education (e.g. High School, Bachelor, Master, etc.)
- * @param {string} props.degree - The degree earned (e.g. Diploma, Bachelor's, Master's, etc.)
- * @param {string} props.year - The year the degree was earned
- * @param {string} props.name - The name of the institution
- * @returns {ReactElement} A div containing the education information
- */
 const Education = ({ level, degree, year, name }) => {
+  const educationRef = useRef(null);
+
+  useEffect(() => {
+    gsap.fromTo(
+      educationRef.current,
+      {
+        y: 50,
+        opacity: 0,
+        scale: 0.9,
+        rotationY: -10,
+      },
+      {
+        y: 0,
+        opacity: 1,
+        scale: 1,
+        rotationY: 0,
+        duration: 0.6,
+        ease: "back.out(1.7)",
+      }
+    );
+
+    // Hover animations
+    educationRef.current.addEventListener('mouseenter', () => {
+      gsap.to(educationRef.current, {
+        y: -8,
+        scale: 1.03,
+        rotationY: 2,
+        duration: 0.3,
+        ease: "power2.out"
+      });
+    });
+
+    educationRef.current.addEventListener('mouseleave', () => {
+      gsap.to(educationRef.current, {
+        y: 0,
+        scale: 1,
+        rotationY: 0,
+        duration: 0.3,
+        ease: "power2.out"
+      });
+    });
+
+    return () => {
+      if (educationRef.current) {
+        educationRef.current.removeEventListener('mouseenter', () => {});
+        educationRef.current.removeEventListener('mouseleave', () => {});
+      }
+    };
+  }, []);
+
   return (
     <div>
       <div
-        className="flex flex-col p-3  rounded-md w-[17rem] bg-[#071A2C]/90 hover:bg-black/50 lg:min-w-[23rem] max-w-[30rem] min-h-[30vh] md:min-h-[35vh] lg:min-h-[25vh] border border-indigo-950 hover:border-violet-600 transition-all duration-300 cursor-pointer"
-        style={
-          {
-            // backgroundColor: "rgba(7, 26, 47, 0.878)",
-          }
-        }
+        ref={educationRef}
+        className="flex flex-col p-3 rounded-md w-[17rem] bg-[#071A2C]/90 hover:bg-black/50 lg:min-w-[23rem] max-w-[30rem] min-h-[30vh] md:min-h-[35vh] lg:min-h-[25vh] border border-indigo-950 hover:border-violet-600 transition-all duration-300 cursor-pointer"
       >
-        <li className="text-violet-500">{level}</li>
-        <p className="text-base">{name}</p>
-
-        <p className="text-base">{degree}</p>
-        <p className="text-base">{year}</p>
+        <li className="text-violet-500 font-semibold">{level}</li>
+        <p className="text-base mt-2 font-medium">{name}</p>
+        <p className="text-base mt-1">{degree}</p>
+        <p className="text-base mt-1 text-gray-400">{year}</p>
       </div>
     </div>
   );

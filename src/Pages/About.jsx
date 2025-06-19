@@ -2,6 +2,7 @@ import { useState, useRef } from "react";
 import "../css/About.css";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Education from "./Components/Education";
 import Experience from "./Components/Experience";
 import Achievements from "./Components/Achievements";
@@ -30,7 +31,6 @@ import NPM from "/All logos/NpmDark.webp";
 import GCPDark from "/All logos/GCPDark.webp";
 import AWS from "/All logos/AWSDark.webp";
 import VercelDark from "/All logos/VercelDark.webp";
-// import GmailDark from "/All logos/Gmail-Dark.webp";
 import Twitter from "/ContactIcons/twitter.webp";
 import Linkedin from "/ContactIcons/linkedin.webp";
 import Instagram from "/ContactIcons/instagram.webp";
@@ -38,6 +38,8 @@ import Phone from "/ContactIcons/phone.webp";
 import Gmail from "/ContactIcons/gmail.webp";
 import githubNew from "/ContactIcons/github.webp";
 import Intro from "./Components/Intro";
+
+gsap.registerPlugin(ScrollTrigger);
 
 const About = () => {
   const [activeSection, setActiveSection] = useState("Education");
@@ -75,7 +77,6 @@ const About = () => {
 
   const sections = [
     "Intro",
-
     "Education",
     "Experience",
     "Skills",
@@ -84,23 +85,106 @@ const About = () => {
   ];
 
   const contentRef = useRef(null);
+  const sectionRef = useRef(null);
+  const titleRef = useRef(null);
+  const buttonsRef = useRef(null);
 
+  // Scroll trigger animation for section entrance
   useGSAP(() => {
+    // Title animation
     gsap.fromTo(
+      titleRef.current,
+      {
+        y: -50,
+        opacity: 0,
+        scale: 0.8,
+      },
+      {
+        y: 0,
+        opacity: 1,
+        scale: 1,
+        duration: 1,
+        ease: "back.out(1.7)",
+        scrollTrigger: {
+          trigger: sectionRef.current,
+          start: "top 80%",
+          end: "top 50%",
+          toggleActions: "play none none reverse",
+        },
+      }
+    );
+
+    // Buttons animation
+    gsap.fromTo(
+      buttonsRef.current.children,
+      {
+        x: -100,
+        opacity: 0,
+        rotation: -10,
+      },
+      {
+        x: 0,
+        opacity: 1,
+        rotation: 0,
+        duration: 0.6,
+        stagger: 0.1,
+        ease: "back.out(1.7)",
+        scrollTrigger: {
+          trigger: buttonsRef.current,
+          start: "top 80%",
+          end: "top 50%",
+          toggleActions: "play none none reverse",
+        },
+      }
+    );
+  }, []);
+
+  // Content change animation
+  useGSAP(() => {
+    const tl = gsap.timeline();
+    
+    // Animate out current content
+    tl.to(contentRef.current.children, {
+      opacity: 0,
+      y: -30,
+      duration: 0.3,
+      stagger: 0.05,
+      ease: "power2.in",
+    })
+    // Animate in new content
+    .fromTo(
       contentRef.current.children,
       {
-        opacity: -10,
-        y: +500,
+        opacity: 0,
+        y: 50,
+        rotationX: -15,
+        scale: 0.95,
       },
       {
         opacity: 1,
         y: 0,
+        rotationX: 0,
+        scale: 1,
         duration: 0.6,
         stagger: 0.1,
-        ease: "power1.out",
+        ease: "back.out(1.7)",
       }
     );
   }, [activeSection]);
+
+  const handleSectionChange = (section) => {
+    // Add click animation to button
+    const clickedButton = event.target;
+    gsap.to(clickedButton, {
+      scale: 0.95,
+      duration: 0.1,
+      yoyo: true,
+      repeat: 1,
+      ease: "power2.inOut",
+    });
+    
+    setActiveSection(section);
+  };
 
   const content = {
     Intro: {
@@ -123,7 +207,7 @@ const About = () => {
           timeline={"August 2024 - Present"}
         />,
         <Experience
-          key={0}
+          key={1}
           org={"NSS IIT Roorkee"}
           position={"Web Developer"}
           techStack="Node.js, Express, MongoDB, HTML) + Extra tools"
@@ -154,14 +238,14 @@ const About = () => {
           year={"2021-2023"}
         />,
         <Education
-          key={1}
+          key={2}
           level={"Senior Secondary School "}
           degree={"Science"}
           name={"Swami Vivekanand College, Kolhapur (Maharashtra)"}
           year={"2021-2023"}
         />,
         <Education
-          key={2}
+          key={3}
           level={"Secondary-school"}
           degree={"CBSE Courses"}
           name={"Jawahar Navodaya Vidyalaya, Sangli (Maharashtra)"}
@@ -195,35 +279,35 @@ const About = () => {
           link={"+91 9309282448"}
         />,
         <Contact
-          key={0}
+          key={1}
           type={"Gmail"}
           icon={Gmail}
           text={"syk2448@gmail.com"}
           link={"syk2448@gmail.com"}
         />,
         <Contact
-          key={0}
+          key={2}
           type={"Linkedin"}
           icon={Linkedin}
           text={"sahil_kamble"}
           link={"https://www.linkedin.com/in/sahil-kamble-43b3ba279/"}
         />,
         <Contact
-          key={0}
+          key={3}
           type={"Github"}
           icon={githubNew}
           text={"sahil2448"}
           link={"https://github.com/sahil2448"}
         />,
         <Contact
-          key={0}
+          key={4}
           type={"Instagram"}
           icon={Instagram}
           text={"sk_2448_iitr"}
           link={"https://www.instagram.com/sk_2448_iitr/"}
         />,
         <Contact
-          key={0}
+          key={5}
           type={"Twitter"}
           icon={Twitter}
           text={"SahilKamble2004"}
@@ -234,13 +318,16 @@ const About = () => {
   };
 
   return (
-    <section id="about-section" className="pt-10  min-h-screen">
-      <h1 className="relative text-5xl font-bold text-center font-heading    bg-gradient-to-r from-[#6366f1] to-[#a855f7] bg-clip-text text-transparent">
+    <section ref={sectionRef} id="about-section" className="pt-10 min-h-screen">
+      <h1 
+        ref={titleRef}
+        className="relative text-5xl font-bold text-center font-heading bg-gradient-to-r from-[#6366f1] to-[#a855f7] bg-clip-text text-transparent"
+      >
         About{" "}
       </h1>
       <div className="min-h-screen py-12">
         <div className="flex flex-col gap-10 sm:flex-row sm:gap-0 lg:gap-10 max-w-7xl mx-auto justify-evenly items-center">
-          <div className="join flex flex-col justify-center w-full sm:w-[40vw] md:w-[30vw] lg:w-[30vw] space-y-4">
+          <div ref={buttonsRef} className="join flex flex-col justify-center w-full sm:w-[40vw] md:w-[30vw] lg:w-[30vw] space-y-4">
             {sections.map((section) => {
               return (
                 <div className="w-[80%] mx-auto" key={section}>
@@ -248,9 +335,9 @@ const About = () => {
                     type="radio"
                     name="options"
                     aria-label={`${section}`}
-                    onClick={() => setActiveSection(section)}
+                    onClick={() => handleSectionChange(section)}
                     defaultChecked={section === activeSection}
-                    className={`join-item btn btn-square w-full text-lg hover:scale-105 transition-transform  `}
+                    className={`join-item btn btn-square w-full text-lg hover:scale-105 transition-all duration-300 hover:shadow-lg hover:shadow-violet-500/50`}
                     style={{
                       backgroundColor:
                         section === activeSection
@@ -265,10 +352,10 @@ const About = () => {
           </div>
           <div
             ref={contentRef}
-            className="flex flex-col justify-start items-center w-[90vw] sm:w-[55vw] md:w-[60vw] lg:w-[60vw] xl:w-[70vw] h-[460px] overflow-y-scroll  space-y-5  p-5 rounded-xl shadow-xl"
+            className="flex flex-col justify-start items-center w-[90vw] sm:w-[55vw] md:w-[60vw] lg:w-[60vw] xl:w-[70vw] h-[460px] overflow-y-scroll space-y-5 p-5 rounded-xl shadow-xl border border-violet-500/20 hover:border-violet-500/40 transition-all duration-300"
             style={{ backgroundColor: "rgba(4, 50, 86, 0.521)" }}
           >
-            <h2 className="self-start text-4xl font-display font-bold  bg-clip-text text-transparent bg-gradient-to-r from-primary to-secondary">
+            <h2 className="self-start text-4xl font-display font-bold bg-clip-text text-transparent bg-gradient-to-r from-primary to-secondary">
               {content[activeSection].Heading}
             </h2>
             <div className="self-center text-xl font-serif flex gap-5 flex-wrap justify-evenly wrap">
@@ -284,62 +371,3 @@ const About = () => {
 };
 
 export default About;
-
-{
-  /* 
-Here's a detailed explanation of all Tailwind CSS modifications:
-
-1. Container Layout:
-- min-h-screen: Sets minimum height to 100vh for full viewport height
-- bg-gradient-to-b: Background gradient flowing top to bottom
-- from-base-200 to-base-300: Gradient colors from theme
-- py-12: Vertical padding of 3rem
-
-2. Main Content Wrapper:
-- flex flex-row: Horizontal flex layout
-- max-w-7xl: Maximum width of 80rem/1280px
-- mx-auto: Auto horizontal margins for centering
-- justify-evenly: Even space distribution between elements
-- items-center: Vertically center items
-
-3. Left Section (Buttons):
-- join: DaisyUI class for connected elements
-- flex flex-col: Vertical flex layout
-- w-[40%]: Width of 40% of parent
-- space-y-4: 1rem gap between vertical elements
-- w-[80%]: Inner width of 80% for buttons
-- mx-auto: Center buttons horizontally
-
-4. Button Styling:
-- join-item: DaisyUI class for joined elements
-- btn btn-square: Square button style
-- w-full: Full width
-- text-lg: Large text size
-- hover:scale-105: Scale up on hover
-- transition-transform: Smooth transform animation
-
-5. Right Section (Content):
-- flex flex-col: Vertical flex layout
-- w-[40%]: Width of 40% of parent
-- space-y-12: 3rem gap between elements
-- bg-base-100: Background color from theme
-- p-8: 2rem padding
-- rounded-xl: Large border radius
-- shadow-xl: Extra large shadow
-
-6. Heading Styles:
-- text-5xl: Extra large text
-- font-bold: Bold font weight
-- bg-clip-text text-transparent: For gradient text
-- bg-gradient-to-r: Right-flowing gradient
-- from-primary to-secondary: Gradient colors
-
-7. Contact Links:
-- list-none: Remove list markers
-- hover:translate-x-2: Move right on hover
-- transition-transform: Smooth movement animation
-
-All colors (primary, secondary, base-100, etc) are from DaisyUI theme system,
-which automatically adapts to light/dark mode based on data-theme attribute.
-*/
-}

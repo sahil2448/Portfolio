@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useRef, useEffect } from "react";
+import gsap from "gsap";
 
 const containerStyle = {
   borderRadius: "5px",
@@ -35,28 +36,90 @@ const bulletStyle = {
   boxShadow: "0 0 8px 2px #b16cea33",
 };
 
-const liHoverStyle = {
-  // color: "#ff6bcb",
-  // ml: "4rem",
-};
-
 const Intro = () => {
-  // For hover effect, you can use a CSS file or styled-components for more advanced interaction
+  const introRef = useRef(null);
+  const listItemsRef = useRef(null);
+
+  useEffect(() => {
+    gsap.fromTo(
+      introRef.current,
+      {
+        opacity: 0,
+        scale: 0.95,
+        y: 30,
+      },
+      {
+        opacity: 1,
+        scale: 1,
+        y: 0,
+        duration: 0.6,
+        ease: "back.out(1.7)",
+      }
+    );
+
+    // Animate list items
+    const listItems = listItemsRef.current.children;
+    gsap.fromTo(
+      listItems,
+      {
+        x: -50,
+        opacity: 0,
+      },
+      {
+        x: 0,
+        opacity: 1,
+        duration: 0.5,
+        stagger: 0.1,
+        delay: 0.3,
+        ease: "power2.out",
+      }
+    );
+
+    // Add hover animations to list items
+    Array.from(listItems).forEach((item) => {
+      item.addEventListener('mouseenter', () => {
+        gsap.to(item, {
+          x: 10,
+          scale: 1.02,
+          duration: 0.3,
+          ease: "power2.out"
+        });
+      });
+
+      item.addEventListener('mouseleave', () => {
+        gsap.to(item, {
+          x: 0,
+          scale: 1,
+          duration: 0.3,
+          ease: "power2.out"
+        });
+      });
+    });
+
+    return () => {
+      Array.from(listItems).forEach((item) => {
+        item.removeEventListener('mouseenter', () => {});
+        item.removeEventListener('mouseleave', () => {});
+      });
+    };
+  }, []);
+
   return (
     <div
-      className="text-base border border-indigo-950 bg-[#071A2C]/90 hover:bg-black/50 hover:border-violet-600 transition-all duration-200"
+      ref={introRef}
+      className="text-base border border-indigo-950 bg-[#071A2C]/90 hover:bg-black/50 hover:border-violet-600 transition-all duration-300 cursor-pointer"
       style={containerStyle}
     >
-      <ul style={listStyle}>
-        <li style={liStyle} className="">
+      <ul ref={listItemsRef} style={listStyle}>
+        <li style={liStyle} className="hover:text-violet-200 transition-colors duration-200">
           <span style={bulletStyle} className="bg-violet-700"></span>
           Hi... Myself Sahil Yuvraj Kamble.
         </li>
-        <li style={liStyle}>
+        <li style={liStyle} className="hover:text-violet-200 transition-colors duration-200">
           <span style={bulletStyle} className="bg-violet-700"></span>
           My origin is Kolhapur, Maharashtra.
         </li>
-        <li style={liStyle}>
+        <li style={liStyle} className="hover:text-violet-200 transition-colors duration-200">
           <span style={bulletStyle} className="bg-violet-700"></span>
           Just finished my 2nd year at IIT Roorkee! I am truly passionate about
           technology. From my very first year, I have been exploring
@@ -66,16 +129,16 @@ const Intro = () => {
           learning, and also doing competitive programming to improve my problem
           solving skills.
         </li>
-        <li style={liStyle}>
+        <li style={liStyle} className="hover:text-violet-200 transition-colors duration-200">
           <span style={bulletStyle} className="bg-violet-700"></span>
           IIT Roorkee gives amazing exposure in different fields, and I try to
           make the most of it by taking part in coding events and hackathons. I
           have also contributed as a web developer for well-known
           club-TEDxIITRoorkee and NSS IIT Roorkee.
         </li>
-        <li style={liStyle}>
+        <li style={liStyle} className="hover:text-violet-200 transition-colors duration-200">
           <span style={bulletStyle} className="bg-violet-700"></span>
-          Looking forward to build something impactfull with like minded people.
+          Looking forward to build something impactful with like minded people.
         </li>
       </ul>
     </div>
