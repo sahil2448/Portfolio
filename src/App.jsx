@@ -1,9 +1,6 @@
 import "./App.css";
 // import { useEffect } from "react";
 import Navbar from "./Pages/Navbar";
-import { useEffect, useRef } from "react";
-import LocomotiveScroll from "locomotive-scroll";
-import "locomotive-scroll/dist/locomotive-scroll.css";
 import Hero from "./Pages/Hero";
 import About from "./Pages/About";
 import Projects from "./Pages/Projects";
@@ -12,32 +9,11 @@ import Footer from "./Pages/Footer";
 import { ContactPage } from "./Pages/ContactPage";
 
 export default function App() {
-  const scrollRef = useRef(null);
-
-  useEffect(() => {
-    if (scrollRef.current) {
-      const scroll = new LocomotiveScroll({
-        el: scrollRef.current,
-        smooth: true,
-        // Adjust multiplier or inertia as needed
-        multiplier: 1,
-        inertia: 0.75,
-      });
-
-      return () => {
-        if (scroll) scroll.destroy();
-      };
-    }
-  }, []);
-
   return (
     <div
-      // ref={scrollRef}
-      // data-scroll-container
       style={{
         backgroundColor: "rgba(7, 26, 47, 0.478)",
       }}
-      className="scroll-smooth"
     >
       <BackgroundVideo />
       <Navbar />
