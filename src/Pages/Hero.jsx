@@ -29,7 +29,6 @@ const Hero = () => {
   useEffect(() => {
     const tl = gsap.timeline({ delay: 0.3 });
 
-
     tl.fromTo(
       imgRef.current,
       {
@@ -88,38 +87,38 @@ const Hero = () => {
       {
         y: 50,
         opacity: 0,
-        scale: 0.8,
+        scale: 1,
       },
       {
         y: 0,
         opacity: 1,
         scale: 1,
-        duration: 0.2,
-        stagger: 0.1,
+        duration: 0.05,
+        // stagger: 0.1,
         ease: "back.out(1.7)",
       },
       "-=0.3"
     );
 
-    tl.fromTo(
-      iconsRef.current.children,
-      {
-        y: 30,
-        opacity: 0,
-        rotation: 180,
-        scale: 0,
-      },
-      {
-        y: 0,
-        opacity: 1,
-        rotation: 0,
-        scale: 1,
-        duration: 0.5,
-        stagger: 0.1,
-        ease: "back.out(1.7)",
-      },
-      "-=0.4"
-    );
+    // tl.fromTo(
+    //   iconsRef.current.children,
+    //   {
+    //     y: 30,
+    //     opacity: 0,
+    //     rotation: 180,
+    //     scale: 0,
+    //   },
+    //   {
+    //     y: 0,
+    //     opacity: 1,
+    //     rotation: 0,
+    //     scale: 1,
+    //     duration: 0.5,
+    //     stagger: 0.1,
+    //     ease: "back.out(1.7)",
+    //   },
+    //   "-=0.4"
+    // );
 
     gsap.to(badgeRef.current, {
       y: -10,
@@ -129,7 +128,6 @@ const Hero = () => {
       ease: "power2.inOut",
       delay: 2,
     });
-
 
     const profileImg = imgRef.current.querySelector("img");
     profileImg.addEventListener("mouseenter", () => {
@@ -149,7 +147,6 @@ const Hero = () => {
         ease: "power2.out",
       });
     });
-
 
     return () => {
       profileImg.removeEventListener("mouseenter", () => {});
@@ -249,7 +246,7 @@ const Hero = () => {
                   return (
                     <a key={idx} href={image.lk} target="_blank">
                       <img
-                        className="size-8 sm:size-10 shadow-md shadow-violet- rounded-lg bg-violet-700/85 hover:shadow-lg hover:shadow-violet-500 hover:bg-violet-800 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-violet-400 cursor-pointer hover:scale-110 hover:-rotate-3"
+                        className="size-8 sm:size-10 shadow-md shadow-violet- rounded-lg bg-violet-700/85 hover:shadow-lg hover:shadow-violet-500 hover:bg-violet-800 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-violet-400 cursor-pointer "
                         key={idx}
                         src={image.imgUrl}
                         alt=""

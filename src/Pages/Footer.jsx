@@ -94,29 +94,6 @@ function Footer() {
     );
 
     const iconElements = iconsRef.current.children;
-    Array.from(iconElements).forEach((icon) => {
-      const img = icon.querySelector("img");
-
-      icon.addEventListener("mouseenter", () => {
-        gsap.to(img, {
-          scale: 1.2,
-          rotation: 10,
-          y: -5,
-          duration: 0.3,
-          ease: "power2.out",
-        });
-      });
-
-      icon.addEventListener("mouseleave", () => {
-        gsap.to(img, {
-          scale: 1,
-          rotation: 0,
-          y: 0,
-          duration: 0.3,
-          ease: "power2.out",
-        });
-      });
-    });
 
     const navElements = navRef.current.children;
     Array.from(navElements).forEach((navItem) => {
@@ -124,7 +101,7 @@ function Footer() {
         gsap.to(navItem, {
           scale: 1.05,
           y: -2,
-          duration: 0.2,
+          duration: 0.05,
           ease: "power2.out",
         });
       });
@@ -133,7 +110,7 @@ function Footer() {
         gsap.to(navItem, {
           scale: 1,
           y: 0,
-          duration: 0.2,
+          duration: 0.05,
           ease: "power2.out",
         });
       });
