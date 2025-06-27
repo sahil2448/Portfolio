@@ -139,6 +139,15 @@ const Projects = () => {
           "Implemented advanced search and filtering features, allowing users to browse, rate, and review listings, as well assearch by destination and filter by categories for an enhanced user experience",
           "Integrated dynamic pricing calculations with GST application, ensuring transparent and accurate price updates forboth hosts and guests",
         ],
+        teckStack: [
+          "Node.js",
+          "Express.js",
+          "MongoDB",
+          "EJS templates",
+          "Bootstrap",
+          "Passport.js",
+          "+Other Tools",
+        ],
         image: `${Wandarlust}`,
         buttonText1: "Github",
         buttonText2: "Live",
@@ -147,18 +156,21 @@ const Projects = () => {
       },
       {
         id: 2,
-        title: "TEDxIITRoorkee",
-        description: [""],
-        image: `${TedX}`,
-        buttonText1: "Github",
-        buttonText2: "Live",
-        buttonLink: "https://www.tedxiitroorkee.in/",
-        githubLink: "https://github.com/TEDxIITR/TEDxIITR2025/tree/main",
-      },
-      {
-        id: 3,
         title: "LiveCircle",
-        description: [""],
+        description: [
+          "Developed a real-time web communication system enabling seamless video conferencing via peer-to-peer (WebRTC)  connections for efficient live interaction",
+          "Integrated in-call chat functionality, allowing participants to collaborate through instant messaging during meetings",
+          "Implemented secure token-based user authentication and authorization, ensuring only authorized users access meetings and chat, following industry best practices",
+        ],
+        teckStack: [
+          "MongoDB",
+          "Express.js",
+          "React.js",
+          "Node.js",
+          "Socket.io",
+          "WebRTC",
+          "+Other Tools",
+        ],
         image: `${LiveCircle}`,
         buttonText1: "Github",
         buttonText2: "Live",
@@ -166,9 +178,34 @@ const Projects = () => {
         githubLink: "https://github.com/sahil2448/LiveCircle",
       },
       {
+        id: 3,
+        title: "TEDxIITRoorkee",
+        description: [""],
+        teckStack: [
+          "React.js",
+          "Tailwind CSS",
+          "GSAP",
+          "DaisyUI",
+          "+Other Tools",
+        ],
+        image: `${TedX}`,
+        buttonText1: "Github",
+        buttonText2: "Live",
+        buttonLink: "https://www.tedxiitroorkee.in/",
+        githubLink: "https://github.com/TEDxIITR/TEDxIITR2025/tree/main",
+      },
+
+      {
         id: 4,
         title: "Note-sphere",
         description: [""],
+        teckStack: [
+          "MongoDB",
+          "Express.js",
+          "React.js",
+          "Node.js",
+          "+Other Tools",
+        ],
         image: `${NoteSphere}`,
         buttonText1: "Github",
         buttonText2: "Live",
@@ -183,6 +220,7 @@ const Projects = () => {
         title: "Todo Application",
         description: [""],
         image: `${Todo}`,
+        teckStack: ["React.js", "Tailwind CSS"],
         buttonText1: "Github",
         buttonText2: "Live",
         buttonLink: "https://taskmanager-qikk.onrender.com/",
@@ -191,7 +229,8 @@ const Projects = () => {
       {
         id: 4,
         title: "Calculator",
-        description: [""],
+        description: [],
+        teckStack: ["React.js", "CSS"],
         image: `${Calculator}`,
         buttonText1: "Github",
         buttonText2: "Live",
@@ -235,12 +274,13 @@ const Projects = () => {
           className="flex flex-row justify-evenly w-full flex-wrap gap-8 md:gap-10 lg:gap-10"
         >
           {projects[activeBtn].map((project) => (
-            <div key={uuidv4()}>
+            <div key={project.id}>
               <ProjectsCard
-                key={project.id}
+                id={project.id}
                 title={project.title}
                 activeBtn={activeBtn}
                 description={project.description}
+                teckStack={project.teckStack}
                 image={project.image}
                 buttonText1={project.buttonText1}
                 buttonText2={project.buttonText2}
