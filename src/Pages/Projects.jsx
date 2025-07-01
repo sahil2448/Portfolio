@@ -180,7 +180,11 @@ const Projects = () => {
       {
         id: 3,
         title: "TEDxIITRoorkee",
-        description: [""],
+        description: [
+          "An animated web application for TEDxIITRoorkee to display their events, invited speakers, history, team members, and Component to sell their t-shirts and tickets .",
+          "Transformed exact Figma designs into a dynamic and interactive website, focusing on smooth animations and a friendly experience.",
+          "Gained valuable experience in building real-world End-To-End web applications.",
+        ],
         teckStack: [
           "React.js",
           "Tailwind CSS",
@@ -198,7 +202,11 @@ const Projects = () => {
       {
         id: 4,
         title: "Note-sphere",
-        description: [""],
+        description: [
+          "A Notes-hosting application built for students to help them for last-time exam preparation.",
+          "Students can post their notes with comment, download & react on other's notes for better searchability.",
+          "This platform was built during SYNTAX ERROR HACKATHON with the team of 4 members.",
+        ],
         teckStack: [
           "MongoDB",
           "Express.js",
@@ -218,7 +226,11 @@ const Projects = () => {
       {
         id: 3,
         title: "Todo Application",
-        description: [""],
+        description: [
+          "A task management application built with React.js and Tailwind CSS.",
+          "Allows users to add, edit, delete and mark-done the tasks with a user-friendly interface.",
+          "Features responsive design and state management for seamless performance.",
+        ],
         image: `${Todo}`,
         teckStack: ["React.js", "Tailwind CSS"],
         buttonText1: "Github",
@@ -229,7 +241,11 @@ const Projects = () => {
       {
         id: 4,
         title: "Calculator",
-        description: [],
+        description: [
+          "A calculator built with React.js and CSS that allows users to perform basic arithmetic operations, including addition, subtraction, multiplication, and division.",
+          "The calculator also supports decimal numbers...And styled in such a way to get a feel of real offline calculator",
+          "",
+        ],
         teckStack: ["React.js", "CSS"],
         image: `${Calculator}`,
         buttonText1: "Github",
