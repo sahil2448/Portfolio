@@ -11,6 +11,7 @@ import Todo from "/ProjectImages/Todo.png";
 import Calculator from "/ProjectImages/Calculator.png";
 import TedX from "/ProjectImages/TedX.webp";
 import LiveCircle from "/ProjectImages/LiveCircle.png";
+import ProTweet from "/ProjectImages/ProTweet.png";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -133,29 +134,30 @@ const Projects = () => {
     Latest: [
       {
         id: 1,
-        title: "WandarLust",
+        title: "ProTweet",
         description: [
-          "It's a full-stack property hosting platform enables users to list, edit, and manage rental properties with images,detailed descriptions, and customizable per-day pricing.",
-          "Implemented advanced search and filtering features, allowing users to browse, rate, and review listings, as well assearch by destination and filter by categories for an enhanced user experience",
-          "Integrated dynamic pricing calculations with GST application, ensuring transparent and accurate price updates forboth hosts and guests",
+          "Built a scalable full-stack platform with Next.js, Node.js, Express, MongoDB, shadcn and Tailwind CSS—enabling users to post, like, comment, and share—with 15+ RESTful endpoints. ",
+          "Engineered professional networking workflows, including editable user profiles with past-work entries, connection requests management, and one-click PDF resume export. ",
+          "Secured and optimized APIs with JWT-based authentication and role-based authorization across 10+ RESTful endpoints. ",
         ],
         teckStack: [
-          "Node.js",
-          "Express.js",
           "MongoDB",
-          "EJS templates",
-          "Bootstrap",
-          "Passport.js",
+          "Express.js",
+          "Next.js",
+          "React.js",
+          "Node.js",
+          "TailwindCSS",
+          "Shadcn Ui",
           "+Other Tools",
         ],
-        image: `${Wandarlust}`,
+        image: `${ProTweet}`,
         buttonText1: "Github",
         buttonText2: "Live",
-        buttonLink: "https://wanderlust-cg0y.onrender.com/",
-        githubLink: "https://github.com/sahil2448/WanderLust",
+        buttonLink: "https://pro-tweet.vercel.app/",
+        githubLink: "https://github.com/sahil2448/",
       },
       {
-        id: 2,
+        id: 1,
         title: "LiveCircle",
         description: [
           "Developed a real-time web communication system enabling seamless video conferencing via peer-to-peer (WebRTC)  connections for efficient live interaction",
@@ -177,6 +179,30 @@ const Projects = () => {
         buttonLink: "https://livecircle-f.onrender.com/",
         githubLink: "https://github.com/sahil2448/LiveCircle",
       },
+      {
+        id: 2,
+        title: "WandarLust",
+        description: [
+          "It's a full-stack property hosting platform enables users to list, edit, and manage rental properties with images,detailed descriptions, and customizable per-day pricing.",
+          "Implemented advanced search and filtering features, allowing users to browse, rate, and review listings, as well assearch by destination and filter by categories for an enhanced user experience",
+          "Integrated dynamic pricing calculations with GST application, ensuring transparent and accurate price updates forboth hosts and guests",
+        ],
+        teckStack: [
+          "Node.js",
+          "Express.js",
+          "MongoDB",
+          "EJS templates",
+          "Bootstrap",
+          "Passport.js",
+          "+Other Tools",
+        ],
+        image: `${Wandarlust}`,
+        buttonText1: "Github",
+        buttonText2: "Live",
+        buttonLink: "https://wanderlust-cg0y.onrender.com/",
+        githubLink: "https://github.com/sahil2448/WanderLust",
+      },
+
       {
         id: 3,
         title: "TEDxIITRoorkee",

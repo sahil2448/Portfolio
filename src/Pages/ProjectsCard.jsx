@@ -103,12 +103,12 @@ const ProjectsCard = ({
       onMouseEnter={() => setIsHovering(true)}
       onMouseLeave={() => setIsHovering(false)}
     >
-      <figure className="relative h-64 w-full overflow-hidden p-2 group">
+      <figure className="relative h-auto w-full overflow-hidden p-2 group">
         <img
           ref={imageRef}
           src={image || "/placeholder.svg"}
           alt={title}
-          className="w-full h-full object-cover rounded-xl transition-transform duration-700"
+          className="w-full h-auto object-cover rounded-xl transition-transform duration-700"
         />
 
         <div
