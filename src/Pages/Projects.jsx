@@ -157,7 +157,7 @@ const Projects = () => {
         githubLink: "https://github.com/sahil2448/",
       },
       {
-        id: 1,
+        id: 2,
         title: "LiveCircle",
         description: [
           "Developed a real-time web communication system enabling seamless video conferencing via peer-to-peer (WebRTC)  connections for efficient live interaction",
@@ -180,7 +180,7 @@ const Projects = () => {
         githubLink: "https://github.com/sahil2448/LiveCircle",
       },
       {
-        id: 2,
+        id: 3,
         title: "WandarLust",
         description: [
           "It's a full-stack property hosting platform enables users to list, edit, and manage rental properties with images,detailed descriptions, and customizable per-day pricing.",
@@ -204,7 +204,7 @@ const Projects = () => {
       },
 
       {
-        id: 3,
+        id: 4,
         title: "TEDxIITRoorkee",
         description: [
           "An animated web application for TEDxIITRoorkee to display their events, invited speakers, history, team members, and Component to sell their t-shirts and tickets .",
@@ -226,7 +226,7 @@ const Projects = () => {
       },
 
       {
-        id: 4,
+        id: 5,
         title: "Note-sphere",
         description: [
           "A Notes-hosting application built for students to help them for last-time exam preparation.",
@@ -250,7 +250,7 @@ const Projects = () => {
 
     Past: [
       {
-        id: 3,
+        id: 1,
         title: "Todo Application",
         description: [
           "A task management application built with React.js and Tailwind CSS.",
@@ -265,7 +265,7 @@ const Projects = () => {
         githubLink: "https://github.com/sahil2448/TaskManager",
       },
       {
-        id: 4,
+        id: 2,
         title: "Calculator",
         description: [
           "A calculator built with React.js and CSS that allows users to perform basic arithmetic operations, including addition, subtraction, multiplication, and division.",
