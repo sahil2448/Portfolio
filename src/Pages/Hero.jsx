@@ -193,7 +193,7 @@ const Hero = () => {
               </h3>
             </div>
             <div className="flex w-full flex-col items-center justify-center xl:items-start">
-              <h1 className="relative text-3xl lg:text-7xl mb-2 font-bold font-mono inline-block bg-gradient-to-r from-[#6366f1] to-[#a855f7] bg-clip-text text-transparent font-heading">
+              <h1 className="relative text-3xl lg:text-7xl mb-2 font-semibold font-mono inline-block bg-gradient-to-r from-[#6366f1] to-[#a855f7] bg-clip-text text-transparent ">
                 Hello World !
               </h1>
 
@@ -209,8 +209,8 @@ const Hero = () => {
             <div className="flex flex-col mb-1 lg:py-3 p-6 lg:px-0">
               <div className="space-y-1 text-gray-300">
                 <h1 className="text-base">
-                  Hii...Myself Sahil Yuvraj Kamble, Currently a 3rd Year Student
-                  at IIT Roorkee.
+                  Myself Sahil Yuvraj Kamble, Currently a 3rd Year Student at
+                  IIT Roorkee.
                 </h1>
                 <h1 className="text-base">
                   Constantly improving my skills through project based learning.

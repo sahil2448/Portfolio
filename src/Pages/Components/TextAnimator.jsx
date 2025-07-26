@@ -1,13 +1,6 @@
 import React, { useState, useEffect } from "react";
 import PropTypes from "prop-types";
 
-/**
- * TextAnimator Component
- * Props:
- *  - sentences: array of strings to animate
- *  - speed: number (ms) interval between each character
- *  - pause: number (ms) pause after each sentence completes
- */
 export default function TextAnimator({ sentences, speed, pause }) {
   const [currentSentence, setCurrentSentence] = useState(0);
   const [charIndex, setCharIndex] = useState(0);
@@ -60,21 +53,3 @@ TextAnimator.defaultProps = {
   speed: 100,
   pause: 1000,
 };
-
-// Usage example:
-// import TextAnimator from './TextAnimator';
-//
-// function App() {
-//   const lines = [
-//     'Hello, welcome to my site!',
-//     'Enjoy the text animation...',
-//     'Built with React, Tailwind, and DaisyUI.'
-//   ];
-//   return (
-//     <div className="min-h-screen flex items-center justify-center bg-base-200">
-//       <div className="card shadow-lg p-6 bg-white">
-//         <TextAnimator sentences={lines} speed={80} pause={1200} />
-//       </div>
-//     </div>
-//   );
-// }
