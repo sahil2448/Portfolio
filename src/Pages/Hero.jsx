@@ -7,6 +7,7 @@ import { FaFileDownload } from "react-icons/fa";
 import gsap from "gsap";
 import { useEffect, useRef } from "react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import TextAnimator from "./Components/TextAnimator";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -18,6 +19,12 @@ const Hero = () => {
       lk: "https://www.linkedin.com/in/sahil-kamble-43b3ba279/",
     },
     { imgUrl: gmail, lk: "syk2448@gmail.com" },
+  ];
+
+  const lines = [
+    "a 3rd year student at IIT Roorkee...",
+    "a Fullstack Web Developer...",
+    "a Problem Solver...",
   ];
 
   const imgRef = useRef(null);
@@ -185,24 +192,25 @@ const Hero = () => {
                 Ready to innovate
               </h3>
             </div>
-            <div>
-              <h1 className="relative text-3xl lg:text-7xl mb-2 font-bold inline-block bg-gradient-to-r from-[#6366f1] to-[#a855f7] bg-clip-text text-transparent font-heading">
+            <div className="flex w-full flex-col items-center justify-center xl:items-start">
+              <h1 className="relative text-3xl lg:text-7xl mb-2 font-bold font-mono inline-block bg-gradient-to-r from-[#6366f1] to-[#a855f7] bg-clip-text text-transparent font-heading">
                 Hello World !
               </h1>
-              <p className="text-xl lg:text-2xl font-semibold mb-2 text-white font-serif">
-                I'm{" "}
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#6366f1] to-[#a855f7] font-extrabold">
-                  Sahil Yuvraj Kamble
-                </span>
-                .
+
+              <p className="text-xl flex lg:text-2xl font-semibold  text-white font-serif">
+                <div>I'm</div>
+                <div className="text-transparent bg-clip-text bg-gradient-to-r from-[#6366f1] to-[#a855f7] font-extrabold">
+                  {" "}
+                  <TextAnimator sentences={lines} speed={50} pause={1000} />
+                </div>
               </p>
             </div>
 
             <div className="flex flex-col mb-1 lg:py-3 p-6 lg:px-0">
               <div className="space-y-1 text-gray-300">
                 <h1 className="text-base">
-                  I'm a Passionate Full Stack Developer, problem solver &
-                  upcoming 3rd year student at IIT Roorkee.
+                  Hii...Myself Sahil Yuvraj Kamble, Currently a 3rd Year Student
+                  at IIT Roorkee.
                 </h1>
                 <h1 className="text-base">
                   Constantly improving my skills through project based learning.
