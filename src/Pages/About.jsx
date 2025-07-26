@@ -89,8 +89,8 @@ const About = () => {
   const titleRef = useRef(null);
   const buttonsRef = useRef(null);
 
-
-  useGSAP(() => {    gsap.fromTo(
+  useGSAP(() => {
+    gsap.fromTo(
       titleRef.current,
       {
         y: -50,
@@ -111,7 +111,6 @@ const About = () => {
         },
       }
     );
-
 
     gsap.fromTo(
       buttonsRef.current.children,
@@ -148,25 +147,24 @@ const About = () => {
       duration: 0.3,
       stagger: 0.05,
       ease: "power2.in",
-    })
-      .fromTo(
-        contentRef.current.children,
-        {
-          opacity: 0,
-          y: 50,
-          rotationX: -15,
-          scale: 1,
-        },
-        {
-          opacity: 1,
-          y: 0,
-          rotationX: 0,
-          scale: 1,
-          duration: 0.6,
-          stagger: 0.3,
-          ease: "back.out(1.7)",
-        }
-      );
+    }).fromTo(
+      contentRef.current.children,
+      {
+        opacity: 0,
+        y: 50,
+        rotationX: -15,
+        scale: 1,
+      },
+      {
+        opacity: 1,
+        y: 0,
+        rotationX: 0,
+        scale: 1,
+        duration: 0.6,
+        stagger: 0.3,
+        ease: "back.out(1.7)",
+      }
+    );
   }, [activeSection]);
 
   const handleSectionChange = (section) => {
@@ -243,7 +241,7 @@ const About = () => {
         <Education
           key={3}
           level={"Secondary-school"}
-          degree={"CBSE Courses"}
+          degree={"CBSE"}
           name={"Jawahar Navodaya Vidyalaya, Sangli (Maharashtra)"}
           year={"2016-2021"}
         />,

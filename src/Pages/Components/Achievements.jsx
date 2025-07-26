@@ -6,11 +6,12 @@ const Achievements = () => {
   const achievementsRef = useRef(null);
 
   const arr = [
-    "2x Participation in hackathons",
-    "Solved 250+ problems on Leetcode",
-    "Rated 1016 at Codeforces",
+    "Selected out of 20000+ candidates for Graph Theory camp by AlgoUniversity. learnt advanced algorithmic techniques under graph data structure",
+    "3x Participation in hackathons, Learnt how to learn new things and implement under pressure",
+    "Solved 300+ problems on Leetcode and learnt how to optimise program with data structures for different usecases",
+    "Rated 1169 at Codeforces, Improved Problem solving and critical thinking under time constraints",
     "Contributed to web developer vertical of TEDxIITRoorkee (Built complete website)",
-    "Contributed to public github repository of Social summit website of NSS IIT Roorkee",
+    "Contributed to public github repository of Social summit website under NSS IIT Roorkee",
     "Participated in Snap syntax event in Cognizance'24 technical fest",
     "Worked as a marketing team member of NSS IIT Roorkee",
   ];

@@ -200,7 +200,6 @@ const Hero = () => {
               <p className="text-xl flex lg:text-2xl font-semibold  text-white font-serif">
                 <div>I'm</div>
                 <div className="text-transparent bg-clip-text bg-gradient-to-r from-[#6366f1] to-[#a855f7] font-extrabold">
-                  {" "}
                   <TextAnimator sentences={lines} speed={50} pause={1000} />
                 </div>
               </p>
