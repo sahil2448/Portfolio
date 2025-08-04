@@ -3,7 +3,7 @@ import { FaCheckCircle } from "react-icons/fa";
 import { useRef, useEffect } from "react";
 import gsap from "gsap";
 
-const Experience = ({ org, position, techStack, timeline, description }) => {
+const Experience = ({ org, position, timeline, description }) => {
   const experienceRef = useRef(null);
 
   useEffect(() => {

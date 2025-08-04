@@ -17,7 +17,6 @@ export const ContactPage = () => {
   const formRef = useRef(null);
 
   useGSAP(() => {
-
     gsap.fromTo(
       titleRef.current,
       {
@@ -39,7 +38,6 @@ export const ContactPage = () => {
         },
       }
     );
-
 
     gsap.fromTo(
       formRef.current,
@@ -63,18 +61,15 @@ export const ContactPage = () => {
       }
     );
 
-
     const formFields = formRef.current.querySelectorAll(
       "input, textarea, button"
     );
     gsap.fromTo(
       formFields,
       {
-
         opacity: 0,
       },
       {
-
         opacity: 1,
         duration: 0.3,
         stagger: 0.1,
@@ -111,7 +106,7 @@ export const ContactPage = () => {
         form.current,
         "QgX-s_IwezohJE97p"
       )
-      .then((result) => {
+      .then(() => {
         setSent(true);
         form.current.reset();
 
@@ -131,7 +126,7 @@ export const ContactPage = () => {
         );
       })
       .catch((error) => {
-        setError("Failed to send message. Please try again.");
+        setError("Failed to send message. Please try again.", error);
       });
   };
   const handleClose = () => {
