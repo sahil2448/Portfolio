@@ -51,7 +51,7 @@ const Hero = () => {
         scale: 1,
         duration: 1.2,
         ease: "back.out(1.7)",
-      }
+      },
     );
 
     tl.fromTo(
@@ -69,7 +69,7 @@ const Hero = () => {
         stagger: 0.15,
         ease: "power3.out",
       },
-      "-=0.8"
+      "-=0.8",
     );
 
     tl.fromTo(
@@ -86,7 +86,7 @@ const Hero = () => {
         duration: 0.6,
         ease: "elastic.out(1, 0.5)",
       },
-      "-=0.4"
+      "-=0.4",
     );
 
     tl.fromTo(
@@ -104,7 +104,7 @@ const Hero = () => {
         // stagger: 0.1,
         ease: "back.out(1.7)",
       },
-      "-=0.3"
+      "-=0.3",
     );
 
     // tl.fromTo(
@@ -197,7 +197,7 @@ const Hero = () => {
                 Hello World !
               </h1>
 
-              <p className="text-xl flex lg:text-2xl font-semibold  text-white font-serif">
+              <p className="text-md flex lg:text-2xl font-semibold  text-white font-serif px-6 sm:px-0">
                 <div>I'm</div>
                 <div className="text-transparent bg-clip-text bg-gradient-to-r from-[#6366f1] to-[#a855f7] font-extrabold">
                   <TextAnimator sentences={lines} speed={50} pause={1000} />
@@ -205,19 +205,19 @@ const Hero = () => {
               </p>
             </div>
 
-            <div className="flex flex-col mb-1 lg:py-3 p-6 lg:px-0">
-              <div className="space-y-1 text-gray-300">
-                <h1 className="text-base">
+            <div className="flex flex-col w-full py-2 lg:py-4">
+              <ul className="space-y-2.5 text-gray-300 text-left list-disc list-inside marker:text-violet-500 max-w-2xl">
+                <li className="text-sm sm:text-base md:text-lg leading-relaxed pl-1">
                   Myself Sahil Yuvraj Kamble, Currently a 3rd Year Student at
-                  IIT Roorkee.
-                </h1>
-                <h1 className="text-base">
-                  Constantly improving my skills through project based learning.
-                </h1>
-                <h1 className="text-base">
-                  I Like Building software Stuff and solving problems.
-                </h1>
-              </div>
+                  IIT Roorkee
+                </li>
+                <li className="text-sm sm:text-base md:text-lg leading-relaxed pl-1">
+                  Constantly improving my skills through project based learning
+                </li>
+                <li className="text-sm sm:text-base md:text-lg leading-relaxed pl-1">
+                  I like building software stuff and solving problems
+                </li>
+              </ul>
             </div>
 
             <div className="flex flex-col gap-8">

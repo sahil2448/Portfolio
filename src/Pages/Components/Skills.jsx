@@ -23,7 +23,7 @@ const Skills = ({ name, tech }) => {
         scale: 1,
         duration: 0.6,
         ease: "back.out(1.7)",
-      }
+      },
     );
 
     tl.fromTo(
@@ -43,7 +43,7 @@ const Skills = ({ name, tech }) => {
         stagger: 0.1,
         ease: "back.out(1.7)",
       },
-      "-=0.3"
+      "-=0.3",
     );
 
     // Add hover animations to each icon
@@ -141,7 +141,7 @@ Skills.propTypes = {
     PropTypes.shape({
       src: PropTypes.string.isRequired,
       name: PropTypes.string.isRequired,
-    })
+    }),
   ).isRequired,
 };
 

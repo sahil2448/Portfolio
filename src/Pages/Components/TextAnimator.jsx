@@ -32,7 +32,7 @@ export default function TextAnimator({ sentences, speed, pause }) {
 
   return (
     <div className="px-4">
-      <div className="text-2xl font-mono">
+      <div className="text-md sm:text-2xl  font-mono">
         {displayText}
         <span className="animate-pulse text-transparent bg-clip-text bg-gradient-to-r from-[#6366f1] to-[#a855f7] font-extrabold ">
           |

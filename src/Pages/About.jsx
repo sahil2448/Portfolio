@@ -109,7 +109,7 @@ const About = () => {
           end: "top 50%",
           toggleActions: "play none none reverse",
         },
-      }
+      },
     );
 
     gsap.fromTo(
@@ -132,7 +132,7 @@ const About = () => {
           end: "top 50%",
           toggleActions: "play none none reverse",
         },
-      }
+      },
     );
   }, []);
 
@@ -163,7 +163,7 @@ const About = () => {
         duration: 0.6,
         stagger: 0.3,
         ease: "back.out(1.7)",
-      }
+      },
     );
   }, [activeSection]);
 
@@ -190,6 +190,19 @@ const About = () => {
       subHeading: [
         <Experience
           key={0}
+          org={"Jivika"}
+          position={"Software Developer Intern"}
+          techStack="Node.js, Express, MongoDB, HTML) + Extra tools"
+          description={[
+            "Engineered Next.js dashboard with 3-tier filtering and bulk ops, cutting admin review time by 40%.",
+            "Optimized candidate pages with server-side pagination and debounced search across 5 indexed fields.",
+            "eveloped Node.js REST APIs using MongoDB aggregation to compute job stats for 1k+ records in <200ms.",
+            "Implemented session state persistence for 8+ UI parameters, reducing redundant API calls by ~60%",
+          ]}
+          timeline={"Sept 2025 - Nov 2025"}
+        />,
+        <Experience
+          key={2}
           org={"TEDxIITRoorkee"}
           position={"Web Developer"}
           techStack={"MERN + Socket.io + Extra tools"}

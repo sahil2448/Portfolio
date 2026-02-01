@@ -12,7 +12,8 @@ import Calculator from "/ProjectImages/Calculator.png";
 import TedX from "/ProjectImages/TedX.webp";
 import LiveCircle from "/ProjectImages/LiveCircle.png";
 import ProTweet from "/ProjectImages/ProTweet.png";
-
+import ContentForge from "/ProjectImages/ContentForge.png";
+import SSRProject from "/ProjectImages/SSRProject.png";
 gsap.registerPlugin(ScrollTrigger);
 
 const Projects = () => {
@@ -43,7 +44,7 @@ const Projects = () => {
           end: "top 50%",
           toggleActions: "play none none reverse",
         },
-      }
+      },
     );
 
     // Buttons animation
@@ -67,7 +68,7 @@ const Projects = () => {
           end: "top 50%",
           toggleActions: "play none none reverse",
         },
-      }
+      },
     );
 
     gsap.fromTo(
@@ -87,7 +88,7 @@ const Projects = () => {
           end: "top 50%",
           toggleActions: "play none none reverse",
         },
-      }
+      },
     );
   }, []);
 
@@ -109,7 +110,7 @@ const Projects = () => {
           duration: 0.6,
           stagger: 0.1,
           ease: "back.out(1.7)",
-        }
+        },
       );
     }
   }, [activeBtn]);
@@ -134,26 +135,42 @@ const Projects = () => {
     Latest: [
       {
         id: 1,
-        title: "ProTweet",
+        title: "SSR Admin Dashboard",
         description: [
-          "Built a scalable full-stack platform with Next.js, Node.js, Express, MongoDB, shadcn and Tailwind CSS—enabling users to post, like, comment, and share—with 15+ RESTful endpoints. ",
-          "Engineered professional networking workflows, including editable user profiles with past-work entries, connection requests management, and one-click PDF resume export. ",
-          "Secured and optimized APIs with JWT-based authentication and role-based authorization across 10+ RESTful endpoints. ",
+          "Built SSR admin dashboard in Next.js 16, reduced initial load time by40%and enabled CRUD for25+SKUs.",
+          "Implemented RBAC with NextAuthwith 3OAuth providers,3roles, secured APIs using JWT + middleware validation.",
+          "Integrated S3 presigned uploads8images/product and OpenRouterwith 3LLM Models to auto-generate descriptions.",
+          "Built real-time analytics with MongoDB aggregations +4Recharts dashboards, tracked90-day sales and low-stock alerts.",
         ],
         teckStack: [
-          "MongoDB",
-          "Express.js",
           "Next.js",
-          "React.js",
           "Node.js",
-          "TailwindCSS",
-          "Shadcn Ui",
+          "MongoDB",
+          "AWS",
+          "OpenRouter-AI integration",
           "+Other Tools",
         ],
-        image: `${ProTweet}`,
+        image: `${SSRProject}`,
         buttonText1: "Github",
         buttonText2: "Live",
-        buttonLink: "https://pro-tweet.vercel.app/",
+        buttonLink: "https://ssr-ecommerce-admin-dashboard-bfev.vercel.app/",
+        githubLink:
+          "https://github.com/sahil2448/ssr-ecommerce-admin-dashboard",
+      },
+      {
+        id: 0,
+        title: "ContentForge",
+        description: [
+          "Architected event-driven backend using Motia orchestrating 10 decoupled workflow steps (API triggers, eventhandlers, cron jobs) to build an end-to-end YouTube-to-content pipeline generating 3 platform-optimized posts.",
+          "Engineered fault-tolerant transcript extraction with 4 cascading fallback strategies, 3-retry exponential backoff, and 60-second timeout handling ensuring high reliability under API rate-limiting",
+          "Implemented real-time status streaming, Redis state persistence across distributed steps, 24-hour auto-expiration (cron every 10 min), and email-based approval workflow with HTML approve/reject links.",
+        ],
+        teckStack: ["Motia worflows", "Next.js", "Next.js", "+Other Tools"],
+        image: `${ContentForge}`,
+        buttonText1: "Github",
+        buttonText2: "Live",
+        buttonLink:
+          "https://content-forge-hoilcjvsk-sahil2448s-projects.vercel.app/",
         githubLink: "https://github.com/sahil2448/",
       },
       {
@@ -180,31 +197,32 @@ const Projects = () => {
         githubLink: "https://github.com/sahil2448/LiveCircle",
       },
       {
-        id: 3,
-        title: "WandarLust",
+        id: 1,
+        title: "ProTweet",
         description: [
-          "It's a full-stack property hosting platform enables users to list, edit, and manage rental properties with images,detailed descriptions, and customizable per-day pricing.",
-          "Implemented advanced search and filtering features, allowing users to browse, rate, and review listings, as well assearch by destination and filter by categories for an enhanced user experience",
-          "Integrated dynamic pricing calculations with GST application, ensuring transparent and accurate price updates forboth hosts and guests",
+          "Built a scalable full-stack platform with Next.js, Node.js, Express, MongoDB, shadcn and Tailwind CSS—enabling users to post, like, comment, and share—with 15+ RESTful endpoints. ",
+          "Engineered professional networking workflows, including editable user profiles with past-work entries, connection requests management, and one-click PDF resume export. ",
+          "Secured and optimized APIs with JWT-based authentication and role-based authorization across 10+ RESTful endpoints. ",
         ],
         teckStack: [
-          "Node.js",
-          "Express.js",
           "MongoDB",
-          "EJS templates",
-          "Bootstrap",
-          "Passport.js",
+          "Express.js",
+          "Next.js",
+          "React.js",
+          "Node.js",
+          "TailwindCSS",
+          "Shadcn Ui",
           "+Other Tools",
         ],
-        image: `${Wandarlust}`,
+        image: `${ProTweet}`,
         buttonText1: "Github",
         buttonText2: "Live",
-        buttonLink: "https://wanderlust-cg0y.onrender.com/",
-        githubLink: "https://github.com/sahil2448/WanderLust",
+        buttonLink: "https://pro-tweet.vercel.app/",
+        githubLink: "https://github.com/sahil2448/",
       },
 
       {
-        id: 4,
+        id: 3,
         title: "TEDxIITRoorkee",
         description: [
           "An animated web application for TEDxIITRoorkee to display their events, invited speakers, history, team members, and Component to sell their t-shirts and tickets .",
@@ -223,28 +241,6 @@ const Projects = () => {
         buttonText2: "Live",
         buttonLink: "https://www.tedxiitroorkee.in/",
         githubLink: "https://github.com/TEDxIITR/TEDxIITR2025/tree/main",
-      },
-
-      {
-        id: 5,
-        title: "Note-sphere",
-        description: [
-          "A Notes-hosting application built for students to help them for last-time exam preparation.",
-          "Students can post their notes with comment, download & react on other's notes for better searchability.",
-          "This platform was built during SYNTAX ERROR HACKATHON with the team of 4 members.",
-        ],
-        teckStack: [
-          "MongoDB",
-          "Express.js",
-          "React.js",
-          "Node.js",
-          "+Other Tools",
-        ],
-        image: `${NoteSphere}`,
-        buttonText1: "Github",
-        buttonText2: "Live",
-        buttonLink: "https://spontaneous-stardust-0bdf9a.netlify.app/",
-        githubLink: "https://github.com/sahil2448/Syntax-Error-24",
       },
     ],
 
@@ -278,6 +274,50 @@ const Projects = () => {
         buttonText2: "Live",
         buttonLink: "https://calculator-cbv3.onrender.com/",
         githubLink: "https://github.com/sahil2448/Calculator",
+      },
+      {
+        id: 3,
+        title: "Note-sphere",
+        description: [
+          "A Notes-hosting application built for students to help them for last-time exam preparation.",
+          "Students can post their notes with comment, download & react on other's notes for better searchability.",
+          "This platform was built during SYNTAX ERROR HACKATHON with the team of 4 members.",
+        ],
+        teckStack: [
+          "MongoDB",
+          "Express.js",
+          "React.js",
+          "Node.js",
+          "+Other Tools",
+        ],
+        image: `${NoteSphere}`,
+        buttonText1: "Github",
+        buttonText2: "Live",
+        buttonLink: "https://spontaneous-stardust-0bdf9a.netlify.app/",
+        githubLink: "https://github.com/sahil2448/Syntax-Error-24",
+      },
+      {
+        id: 4,
+        title: "WandarLust",
+        description: [
+          "It's a full-stack property hosting platform enables users to list, edit, and manage rental properties with images,detailed descriptions, and customizable per-day pricing.",
+          "Implemented advanced search and filtering features, allowing users to browse, rate, and review listings, as well assearch by destination and filter by categories for an enhanced user experience",
+          "Integrated dynamic pricing calculations with GST application, ensuring transparent and accurate price updates forboth hosts and guests",
+        ],
+        teckStack: [
+          "Node.js",
+          "Express.js",
+          "MongoDB",
+          "EJS templates",
+          "Bootstrap",
+          "Passport.js",
+          "+Other Tools",
+        ],
+        image: `${Wandarlust}`,
+        buttonText1: "Github",
+        buttonText2: "Live",
+        buttonLink: "https://wanderlust-cg0y.onrender.com/",
+        githubLink: "https://github.com/sahil2448/WanderLust",
       },
     ],
   };
