@@ -12,10 +12,13 @@ import Skills from "./Components/Skills";
 import HTML from "/All logos/HTML.webp";
 import CSS from "/All logos/CSS.webp";
 import JavaScript from "/All logos/JavaScript.webp";
+import TypeScript from "/All logos/TypeScript.webp";
 import ReactDark from "/All logos/ReactDark.webp";
 import TailwindCSS from "/All logos/TailwindCSSDark.webp";
 import NodeJsDark from "/All logos/NodeJsDark.webp";
 import ExpressJsDark from "/All logos/ExpressJsDark.webp";
+import PythonDark from "/All logos/PythonDark.webp";
+import JavaDark from "/All logos/JavaDark.webp";
 import MongoDB from "/All logos/MongoDB.webp";
 import REST_API from "/All logos/REST_API.webp";
 import Redux from "/All logos/Redux.webp";
@@ -48,6 +51,7 @@ const About = () => {
     { src: HTML, name: "HTML" },
     { src: CSS, name: "CSS" },
     { src: JavaScript, name: "JavaScript" },
+    { src: TypeScript, name: "TypeScript" },
     { src: ReactDark, name: "React.js" },
     { src: TailwindCSS, name: "TailwindCSS" },
     { src: Redux, name: "Redux" },
@@ -57,10 +61,12 @@ const About = () => {
     { src: ExpressJsDark, name: "Express.js" },
     { src: REST_API, name: "Rest API" },
     { src: JWT, name: "JWT" },
+    { src: PythonDark, name: "Python" },
+    { src: JavaDark, name: "Java" },
   ];
   const DtechArr = [
     { src: MongoDB, name: "MongoDB" },
-    { src: SQL, name: "MySQL" },
+    { src: SQL, name: "PostgreSQL" },
   ];
   const OtechArr = [
     { src: Git, name: "Git" },
@@ -191,27 +197,26 @@ const About = () => {
         <Experience
           key={0}
           org={"Jivika"}
-          position={"Software Developer Intern"}
-          techStack="Node.js, Express, MongoDB, HTML) + Extra tools"
+          position={"Software Development Intern"}
+          techStack="Node.js, Express, MongoDB, Next.js, TypeScript"
           description={[
-            "Engineered Next.js dashboard with 3-tier filtering and bulk ops, cutting admin review time by 40%.",
-            "Optimized candidate pages with server-side pagination and debounced search across 5 indexed fields.",
-            "eveloped Node.js REST APIs using MongoDB aggregation to compute job stats for 1k+ records in <200ms.",
-            "Implemented session state persistence for 8+ UI parameters, reducing redundant API calls by ~60%",
+            "Engineered a Next.js dashboard with 3-tier filtering and bulk operations, reducing admin review time significantly.",
+            "Optimized candidate pages with sortable columns, server-side pagination & debounced search across 5 indexed fields.",
+            "Developed Node.js REST APIs using MongoDB aggregation to compute job stats for 1k+ employer records in <200ms.",
+            "Built session state persistence for 8+ UI parameters, enabled seamless navigation, reduced redundant API calls by ~60%.",
           ]}
-          timeline={"Sept 2025 - Nov 2025"}
+          timeline={"Sep 2025 – Nov 2025"}
         />,
         <Experience
           key={2}
           org={"TEDxIITRoorkee"}
-          position={"Web Developer"}
-          techStack={"MERN + Socket.io + Extra tools"}
+          position={"Technical Head"}
+          techStack={"React, GSAP, Tailwind CSS, EaseBuzz"}
           description={[
-            "Developed an animated web application of a well known club of IIT Roorkee ,To help them showcase their events,invited speakers, Past history, team members and component to sell t-shirts and tickets.",
-            "Had a great experience of transforming exact figma design into Dynamic and interactive web application.",
-            "Got to learn lot many insightful things and best practices from seniors.",
+            "Developed a responsive TEDx website with EaseBuzz integration, driving 100+ attendees for the TEDx event.",
+            "Oversaw broader event planning and execution activities, coordinating/collaborating with a 20+ member team.",
           ]}
-          timeline={"August 2024 - Present"}
+          timeline={"Apr 2025 – Apr 2026"}
         />,
         <Experience
           key={1}
@@ -289,8 +294,8 @@ const About = () => {
           key={1}
           type={"Gmail"}
           icon={Gmail}
-          text={"syk2448@gmail.com"}
-          link={"syk2448@gmail.com"}
+          text={"sahil.kamble.work@gmail.com"}
+          link={"sahil.kamble.work@gmail.com"}
         />,
         <Contact
           key={2}

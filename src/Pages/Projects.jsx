@@ -14,6 +14,7 @@ import LiveCircle from "/ProjectImages/LiveCircle.png";
 import ProTweet from "/ProjectImages/ProTweet.png";
 import ContentForge from "/ProjectImages/ContentForge.png";
 import SSRProject from "/ProjectImages/SSRProject.png";
+import VersionControl from "/ProjectImages/VersionControl.png";
 gsap.registerPlugin(ScrollTrigger);
 
 const Projects = () => {
@@ -21,7 +22,7 @@ const Projects = () => {
   const titleRef = useRef(null);
   const buttonsRef = useRef(null);
   const cardsRef = useRef(null);
-  const [activeBtn, setActiveBtn] = useState("Latest");
+  const [activeBtn, setActiveBtn] = useState("Best Projects");
 
   useGSAP(() => {
     // Title animation
@@ -115,7 +116,7 @@ const Projects = () => {
     }
   }, [activeBtn]);
 
-  let btns = ["Latest", "Past"];
+  let btns = ["Best Projects", "All Projects"];
 
   const handleButtonClick = (btn) => {
     // Button click animation
@@ -132,9 +133,36 @@ const Projects = () => {
   };
 
   const projects = {
-    Latest: [
+    "Best Projects": [
       {
         id: 1,
+        title: "Version Control System",
+        description: [
+          "Architected a full-stack VCS utilizing 23 Express REST API endpoints and 4 optimized MongoDB models.",
+          "Engineered a custom Git-like CLI for local staging and UUID versioning, using AWS S3 for remote payloads up to 50MB.",
+          "Developed Secure React/TS repository workflows with JWTs and optimized state synchronization speed by 35%.",
+          "Designed a Gemini-powered RAG pipeline for real-time duplicate issue detection feature, cutting manual triage by 40%.",
+          "Built Socket.IO real-time notifications, delivering instant cross-session alerts for repository events, eliminating API polling.",
+        ],
+        teckStack: [
+          "React.js",
+          "TypeScript",
+          "Node.js",
+          "MongoDB",
+          "Socket.io",
+          "CLI",
+          "RAG",
+          "AWS",
+          "+Other Tools",
+        ],
+        image: `${VersionControl}`,
+        buttonText1: "Github",
+        buttonText2: "Live",
+        buttonLink: "https://github.com/sahil2448/version-control-system",
+        githubLink: "https://github.com/sahil2448/version-control-system",
+      },
+      {
+        id: 2,
         title: "SSR Admin Dashboard",
         description: [
           "Built SSR admin dashboard in Next.js 16, reduced initial load time by40%and enabled CRUD for25+SKUs.",
@@ -158,7 +186,7 @@ const Projects = () => {
           "https://github.com/sahil2448/ssr-ecommerce-admin-dashboard",
       },
       {
-        id: 0,
+        id: 3,
         title: "ContentForge",
         description: [
           "Architected event-driven backend using Motia orchestrating 10 decoupled workflow steps (API triggers, eventhandlers, cron jobs) to build an end-to-end YouTube-to-content pipeline generating 3 platform-optimized posts.",
@@ -174,7 +202,7 @@ const Projects = () => {
         githubLink: "https://github.com/sahil2448/",
       },
       {
-        id: 2,
+        id: 4,
         title: "LiveCircle",
         description: [
           "Developed a real-time web communication system enabling seamless video conferencing via peer-to-peer (WebRTC)  connections for efficient live interaction",
@@ -197,7 +225,7 @@ const Projects = () => {
         githubLink: "https://github.com/sahil2448/LiveCircle",
       },
       {
-        id: 1,
+        id: 5,
         title: "ProTweet",
         description: [
           "Built a scalable full-stack platform with Next.js, Node.js, Express, MongoDB, shadcn and Tailwind CSS—enabling users to post, like, comment, and share—with 15+ RESTful endpoints. ",
@@ -222,7 +250,7 @@ const Projects = () => {
       },
 
       {
-        id: 3,
+        id: 6,
         title: "TEDxIITRoorkee",
         description: [
           "An animated web application for TEDxIITRoorkee to display their events, invited speakers, history, team members, and Component to sell their t-shirts and tickets .",
@@ -244,7 +272,7 @@ const Projects = () => {
       },
     ],
 
-    Past: [
+    "All Projects": [
       {
         id: 1,
         title: "Todo Application",

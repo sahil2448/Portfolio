@@ -6,14 +6,12 @@ const Achievements = () => {
   const achievementsRef = useRef(null);
 
   const arr = [
-    "Rated 1407-Specialist on Codeforces, Improved Problem solving and critical thinking under time constraints",
-    "Selected out of 20000+ candidates for Graph Theory camp by AlgoUniversity. learnt advanced algorithmic techniques under graph data structure",
-    "Solved 300+ problems on Leetcode and learnt how to optimise program with data structures for different usecases",
-    "3x Participation in hackathons, Learnt how to learn new things and implement under pressure",
-    "Contributed to web developer vertical of TEDxIITRoorkee (Built complete website)",
-    "Contributed to public github repository of Social summit website under NSS IIT Roorkee",
-    "Participated in Snap syntax event in Cognizance'24 technical fest",
-    "Worked as a marketing team member of NSS IIT Roorkee",
+    "Codeforces maximum rating of 1443 - Specialist (Handle: shipcode)",
+    "Codechef maximum rating of 1537 - 3 star (Handle: syk2448)",
+    "Leetcode - Ranked in the Top 6% globally with a maximum rating of 1,839 (Handle: shipcode)",
+    "Contributed to FlowiseAI Open Source Repository - opened 6 PRs, 3 merged (53k+ GitHub stars)",
+    "Selected among 3000/40,000+ candidates for Graph & Dynamic Programming camp by AlgoUniversity",
+    "Learned 17+ advanced graph problem-solving techniques and 2 key DP optimization techniques from a Codeforces Master",
   ];
 
   useEffect(() => {

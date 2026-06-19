@@ -126,7 +126,7 @@ const Intro = () => {
           className="hover:text-violet-200 transition-colors duration-200"
         >
           <span style={bulletStyle} className="bg-violet-700"></span>
-          Just finished my 2nd year at IIT Roorkee! I am truly passionate about
+          Just finished my 3rd year at IIT Roorkee! I am truly passionate about
           technology. From my very first year, I have been exploring
           coding...starting with the basics of programming, then diving deep
           into data structures and algorithms and then full stack development.
