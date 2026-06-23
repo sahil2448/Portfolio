@@ -158,8 +158,8 @@ const Projects = () => {
         image: `${VersionControl}`,
         buttonText1: "Github",
         buttonText2: "Live",
-        buttonLink: "https://github.com/sahil2448/version-control-system",
-        githubLink: "https://github.com/sahil2448/version-control-system",
+        buttonLink: "https://main.d1zjk4pi7u9tt9.amplifyapp.com/",
+        githubLink: "https://github.com/sahil2448/RepoFlow",
       },
       {
         id: 2,
