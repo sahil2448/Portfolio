@@ -46,7 +46,7 @@ function Footer() {
           end: "top 70%",
           toggleActions: "play none none reverse",
         },
-      }
+      },
     );
 
     gsap.fromTo(
@@ -67,7 +67,7 @@ function Footer() {
           end: "top 70%",
           toggleActions: "play none none reverse",
         },
-      }
+      },
     );
 
     gsap.fromTo(
@@ -90,7 +90,7 @@ function Footer() {
           end: "top 70%",
           toggleActions: "play none none reverse",
         },
-      }
+      },
     );
 
     const iconElements = iconsRef.current.children;

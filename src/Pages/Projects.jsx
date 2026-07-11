@@ -355,7 +355,7 @@ const Projects = () => {
       <div className="container mx-auto sm:p-8 md:px-10 lg:px-20 xl:px-32">
         <h1
           ref={titleRef}
-          className="relative text-5xl font-bold text-center font-heading bg-gradient-to-r from-[#6366f1] to-[#a855f7] bg-clip-text text-transparent"
+          className="text-4xl md:text-5xl font-bold text-center bg-gradient-to-r from-indigo-500 to-violet-500 bg-clip-text text-transparent"
         >
           My Projects{" "}
         </h1>

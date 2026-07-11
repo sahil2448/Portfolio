@@ -329,60 +329,130 @@ const About = () => {
     },
   };
 
-  return (
-    <section ref={sectionRef} id="about-section" className="pt-10 min-h-screen">
-      <h1
-        ref={titleRef}
-        className="relative text-5xl font-bold text-center font-heading bg-gradient-to-r from-[#6366f1] to-[#a855f7] bg-clip-text text-transparent"
+  // calculate width of screens ->
+  let width = window.innerWidth;
+
+  if (width <= 768) {
+    return (
+      <section
+        ref={sectionRef}
+        id="about-section"
+        className="min-h-screen px-4 py-8"
       >
-        About{" "}
-      </h1>
-      <div className="min-h-screen py-12">
-        <div className="flex flex-col gap-10 sm:flex-row sm:gap-0 lg:gap-10 max-w-7xl mx-auto justify-evenly items-center">
-          <div
-            ref={buttonsRef}
-            className="join flex flex-col justify-center w-full sm:w-[40vw] md:w-[30vw] lg:w-[30vw] space-y-4"
-          >
-            {sections.map((section) => {
-              return (
-                <div className="w-[80%] mx-auto" key={section}>
-                  <input
-                    type="radio"
-                    name="options"
-                    aria-label={`${section}`}
-                    onClick={() => handleSectionChange(section)}
-                    defaultChecked={section === activeSection}
-                    className={`join-item btn btn-square w-full text-lg hover:scale-105 transition-all duration-300 hover:shadow-lg hover:shadow-violet-500/50`}
-                    style={{
-                      backgroundColor:
-                        section === activeSection
-                          ? ""
-                          : "rgba(4, 50, 86, 0.521)",
-                      color: section === activeSection ? "black" : "",
-                    }}
-                  />
-                </div>
-              );
-            })}
+        <h1
+          ref={titleRef}
+          className="text-4xl font-bold text-center bg-gradient-to-r from-indigo-500 to-violet-500 bg-clip-text text-transparent"
+        >
+          About
+        </h1>
+
+        {/* Navigation */}
+        <div
+          ref={buttonsRef}
+          className="flex flex-wrap justify-center gap-3 mt-8"
+        >
+          {sections.map((section) => (
+            <button
+              key={section}
+              onClick={() => handleSectionChange(section)}
+              className={`
+              px-5
+              py-3
+              rounded-xl
+              font-semibold
+              text-sm
+              transition-all
+              duration-300
+              active:scale-95
+              border
+
+              ${
+                activeSection === section
+                  ? "bg-indigo-400  border-indigo-500 shadow-lg shadow-violet-500/40 text-black"
+                  : "bg-[#072846]/70 text-gray-200 border-violet-500/20 hover:border-violet-400 hover:bg-[#0b3357]"
+              }
+            `}
+            >
+              {section}
+            </button>
+          ))}
+        </div>
+
+        {/* Content */}
+        <div
+          ref={contentRef}
+          className="mt-8 rounded-2xl p-5 bg-[#043256]/70 border border-violet-500/20 shadow-xl"
+        >
+          <h2 className="text-2xl font-bold bg-gradient-to-r from-indigo-400 to-violet-400 bg-clip-text text-transparent">
+            {content[activeSection].Heading}
+          </h2>
+
+          <div className="mt-5 flex flex-col gap-5">
+            {content[activeSection].subHeading}
           </div>
-          <div
-            ref={contentRef}
-            className="flex flex-col justify-start items-center w-[90vw] sm:w-[55vw] md:w-[60vw] lg:w-[60vw] xl:w-[70vw] h-[460px] overflow-y-scroll space-y-5 p-5 rounded-xl shadow-xl border border-violet-500/20 hover:border-violet-500/40 transition-all duration-300"
-            style={{ backgroundColor: "rgba(4, 50, 86, 0.521)" }}
-          >
-            <h2 className="self-start text-4xl font-display font-bold bg-clip-text text-transparent bg-gradient-to-r from-primary to-secondary">
-              {content[activeSection].Heading}
-            </h2>
-            <div className="self-center text-xl font-serif flex gap-5 flex-wrap justify-evenly wrap">
-              {content[activeSection].subHeading.map((heading) => {
-                return <>{heading}</>;
+        </div>
+      </section>
+    );
+  } else {
+    return (
+      <section
+        ref={sectionRef}
+        id="about-section"
+        className="pt-10 min-h-screen"
+      >
+        <h1
+          ref={titleRef}
+          className="relative text-5xl font-bold text-center font-heading bg-gradient-to-r from-[#6366f1] to-[#a855f7] bg-clip-text text-transparent"
+        >
+          About{" "}
+        </h1>
+        <div className="min-h-screen py-12">
+          <div className="flex flex-col gap-10 sm:flex-row sm:gap-0 lg:gap-10 max-w-7xl mx-auto justify-evenly items-center">
+            <div
+              ref={buttonsRef}
+              className="join flex flex-col justify-center w-full sm:w-[40vw] md:w-[30vw] lg:w-[30vw] space-y-4"
+            >
+              {sections.map((section) => {
+                return (
+                  <div className="w-[80%] mx-auto" key={section}>
+                    <input
+                      type="radio"
+                      name="options"
+                      aria-label={`${section}`}
+                      onClick={() => handleSectionChange(section)}
+                      defaultChecked={section === activeSection}
+                      className={`join-item btn btn-square w-full text-lg hover:scale-105 transition-all duration-300 hover:shadow-lg hover:shadow-violet-500/50`}
+                      style={{
+                        backgroundColor:
+                          section === activeSection
+                            ? ""
+                            : "rgba(4, 50, 86, 0.521)",
+                        color: section === activeSection ? "black" : "",
+                      }}
+                    />
+                  </div>
+                );
               })}
+            </div>
+            <div
+              ref={contentRef}
+              className="flex flex-col justify-start items-center w-[90vw] sm:w-[55vw] md:w-[60vw] lg:w-[60vw] xl:w-[70vw] h-[460px] overflow-y-scroll space-y-5 p-5 rounded-xl shadow-xl border border-violet-500/20 hover:border-violet-500/40 transition-all duration-300"
+              style={{ backgroundColor: "rgba(4, 50, 86, 0.521)" }}
+            >
+              <h2 className="self-start text-4xl font-display font-bold bg-clip-text text-transparent bg-gradient-to-r from-primary to-secondary">
+                {content[activeSection].Heading}
+              </h2>
+              <div className="self-center text-xl font-serif flex gap-5 flex-wrap justify-evenly wrap">
+                {content[activeSection].subHeading.map((heading) => {
+                  return <>{heading}</>;
+                })}
+              </div>
             </div>
           </div>
         </div>
-      </div>
-    </section>
-  );
+      </section>
+    );
+  }
 };
 
 export default About;
