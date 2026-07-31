@@ -5,13 +5,16 @@ import profile from "/profile.webp";
 import BackgroundVideo from "./BackgroundVideo";
 import { FaFileDownload } from "react-icons/fa";
 import gsap from "gsap";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import TextAnimator from "./Components/TextAnimator";
+import ResumeModal from "./Components/ResumeModal";
 
 gsap.registerPlugin(ScrollTrigger);
 
 const Hero = () => {
+  const [isResumeModalOpen, setIsResumeModalOpen] = useState(false);
+
   let icons = [
     { imgUrl: github, lk: "https://github.com/sahil2448" },
     {
@@ -22,7 +25,7 @@ const Hero = () => {
   ];
 
   const lines = [
-    "a 3rd year student at IIT Roorkee...",
+    "a 4th year student at IIT Roorkee...",
     "a Fullstack Web Developer...",
     "a Problem Solver...",
   ];
@@ -107,26 +110,6 @@ const Hero = () => {
       "-=0.3",
     );
 
-    // tl.fromTo(
-    //   iconsRef.current.children,
-    //   {
-    //     y: 30,
-    //     opacity: 0,
-    //     rotation: 180,
-    //     scale: 0,
-    //   },
-    //   {
-    //     y: 0,
-    //     opacity: 1,
-    //     rotation: 0,
-    //     scale: 1,
-    //     duration: 0.5,
-    //     stagger: 0.1,
-    //     ease: "back.out(1.7)",
-    //   },
-    //   "-=0.4"
-    // );
-
     gsap.to(badgeRef.current, {
       y: -10,
       duration: 2,
@@ -165,7 +148,7 @@ const Hero = () => {
     <div>
       <BackgroundVideo />
       <div
-        className="hero min-h-screen bg-none"
+        className={`hero min-h-screen bg-none ${isResumeModalOpen ? "opacity-10" : "opacity-100"}`}
         style={{ backgroundColor: "transparent" }}
       >
         <div className="hero-content flex-col lg:flex-row-reverse gap-10 mt-10 lg:mt-0">
@@ -198,7 +181,7 @@ const Hero = () => {
               </h1>
 
               <p className="text-md flex lg:text-2xl font-semibold  text-white font-serif px-6 sm:px-0">
-                <div>I'm</div>
+                <div>{"I'm"}</div>
                 <div className="text-transparent bg-clip-text bg-gradient-to-r from-[#6366f1] to-[#a855f7] font-extrabold">
                   <TextAnimator sentences={lines} speed={50} pause={1000} />
                 </div>
@@ -208,14 +191,14 @@ const Hero = () => {
             <div className="flex flex-col w-full py-2 lg:py-4">
               <ul className="space-y-2.5 text-gray-300 text-left list-disc list-inside marker:text-violet-500 max-w-2xl">
                 <li className="text-sm sm:text-base md:text-lg leading-relaxed pl-1">
-                  Myself Sahil Yuvraj Kamble, Currently a 3rd Year Student at
-                  IIT Roorkee
+                  Currently a 4th Year Student at IIT Roorkee
                 </li>
                 <li className="text-sm sm:text-base md:text-lg leading-relaxed pl-1">
-                  Constantly improving my skills through project based learning
+                  Have Experties in building AI-Powered Web Applications.
                 </li>
                 <li className="text-sm sm:text-base md:text-lg leading-relaxed pl-1">
-                  I like building software stuff and solving problems
+                  Specialist on Codeforces | 3 star on Codechef | Top 6%
+                  Globally on Leetcode
                 </li>
               </ul>
             </div>
@@ -235,14 +218,15 @@ const Hero = () => {
                   Projects
                 </button>
 
-                <button className="group btn btn-soft bg-transparent relative overflow-hidden rounded-lg border-2 border-primary font-semibold text-primary transition-all duration-300 hover:text-black hover:scale-105">
+                <button
+                  className="group btn btn-soft bg-transparent relative overflow-hidden rounded-lg border-2 border-primary font-semibold text-primary transition-all duration-300 hover:text-black hover:scale-105"
+                  onClick={() => setIsResumeModalOpen(true)}
+                >
                   <span className="absolute bottom-0 left-0 h-0 sm:w-full bg-primary transition-all duration-300 ease-out group-hover:h-full"></span>
-                  <a href="/ResumeLatest.pdf" download>
-                    <div className="flex justify-between items-center w-[30vw] sm:w-[7vw] group">
-                      <span className="relative z-10">My Resume</span>
-                      <FaFileDownload className="size-5 z-10 group-hover:text-black transition-all duration-200 group-hover:animate-bounce" />
-                    </div>
-                  </a>
+                  <div className="flex justify-between items-center w-[30vw] sm:w-[7vw] group">
+                    <span className="relative z-10">My Resume</span>
+                    <FaFileDownload className="size-5 z-10 group-hover:text-black transition-all duration-200 group-hover:animate-bounce" />
+                  </div>
                 </button>
               </div>
               <div
@@ -266,6 +250,11 @@ const Hero = () => {
           </div>
         </div>
       </div>
+
+      <ResumeModal
+        isOpen={isResumeModalOpen}
+        onClose={() => setIsResumeModalOpen(false)}
+      />
     </div>
   );
 };

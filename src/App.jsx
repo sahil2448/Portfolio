@@ -54,8 +54,6 @@ export default function App() {
           backgroundColor: "rgba(7, 26, 47, 0.578)",
         }}
       >
-
-        
         <Footer />
       </section>
     </div>

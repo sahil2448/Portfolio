@@ -39,7 +39,7 @@ const Navbar = () => {
         opacity: 1,
         duration: 1,
         ease: "power3.out",
-      }
+      },
     );
 
     if (navItemsRef.current) {
@@ -56,7 +56,7 @@ const Navbar = () => {
           opacity: 1,
           delay: 0,
           stagger: 0.3,
-        }
+        },
       );
     }
   }, []);
@@ -158,7 +158,7 @@ const Navbar = () => {
               onClick={() => scrollToSection("hero-section")}
               className="relative font-display cursor-pointer text-2xl font-bold inline-block  bg-gradient-to-r from-[#6366f1] to-[#a855f7] bg-clip-text text-transparent"
             >
-              Sahil Kamble
+              S.Y.K.
             </div>
             <div
               ref={navItemsRef}
