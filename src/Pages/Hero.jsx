@@ -25,8 +25,8 @@ const Hero = () => {
   ];
 
   const lines = [
-    "a 4th year student at IIT Roorkee...",
-    "a Fullstack Web Developer...",
+    "a Final year student at IIT Roorkee...",
+    "a Fullstack AI Engineer...",
     "a Problem Solver...",
   ];
 
@@ -209,7 +209,7 @@ const Hero = () => {
                 className="flex flex-row gap-3 sm:w-full sm:gap-5"
               >
                 <button
-                  className="btn btn-primary hover:scale-105 transition-transform duration-200"
+                  className="btn px-3 !h-[45px] !min-h-[45px] sm:!h-[45px] sm:!min-h-[45px] btn-primary hover:scale-105 transition-transform duration-200"
                   onClick={() => {
                     const element = document.getElementById("projects-section");
                     element.scrollIntoView({ behavior: "smooth" });
@@ -219,7 +219,7 @@ const Hero = () => {
                 </button>
 
                 <button
-                  className="group btn btn-soft bg-transparent relative overflow-hidden rounded-lg border-2 border-primary font-semibold text-primary transition-all duration-300 hover:text-black hover:scale-105"
+                  className="group btn btn-soft !h-[45px] !min-h-[45px] px-3 bg-transparent relative overflow-hidden rounded-lg border-2 border-primary font-semibold text-primary transition-all duration-300 hover:text-black hover:scale-105"
                   onClick={() => setIsResumeModalOpen(true)}
                 >
                   <span className="absolute bottom-0 left-0 h-0 sm:w-full bg-primary transition-all duration-300 ease-out group-hover:h-full"></span>
@@ -237,7 +237,7 @@ const Hero = () => {
                   return (
                     <a key={idx} href={image.lk} target="_blank">
                       <img
-                        className="size-8 sm:size-10 shadow-md shadow-violet- rounded-lg bg-violet-700/85 hover:shadow-lg hover:shadow-violet-500 hover:bg-violet-800 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-violet-400 cursor-pointer "
+                        className="size-7 sm:size-9 shadow-md shadow-violet- rounded-lg bg-violet-700/85 hover:shadow-lg hover:shadow-violet-500 hover:bg-violet-800 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-violet-400 cursor-pointer "
                         key={idx}
                         src={image.imgUrl}
                         alt=""

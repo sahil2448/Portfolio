@@ -98,7 +98,7 @@ const Navbar = () => {
                   onClick={() => scrollToSection("hero-section")}
                   className="relative cursor-pointer inline-block mt-2 bg-gradient-to-r from-[#6366f1] to-[#a855f7] bg-clip-text text-transparent"
                 >
-                  SK
+                  S.Y.K.
                 </div>
                 <div className="flex items-center gap-2">
                   <label
