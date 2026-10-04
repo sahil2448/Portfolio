@@ -191,10 +191,11 @@ const Hero = () => {
             <div className="flex flex-col w-full py-2 lg:py-4">
               <ul className="space-y-2.5 text-gray-300 text-left list-disc list-inside marker:text-violet-500 max-w-2xl">
                 <li className="text-sm sm:text-base md:text-lg leading-relaxed pl-1">
-                  Currently a 4th Year Student at IIT Roorkee
+                  Currently a Final Year Student at IIT Roorkee
                 </li>
                 <li className="text-sm sm:text-base md:text-lg leading-relaxed pl-1">
-                  Have Experties in building AI-Powered Web Applications.
+                  Building Scalable, High-Performance AI-Powered Full-Stack
+                  Applications{" "}
                 </li>
                 <li className="text-sm sm:text-base md:text-lg leading-relaxed pl-1">
                   Specialist on Codeforces | 3 star on Codechef | Top 6%
