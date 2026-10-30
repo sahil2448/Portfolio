@@ -78,7 +78,7 @@ const ResumeModal = ({ isOpen, onClose }) => {
         "service_j1ctd4i",
         "template_p8fz13h",
         templateParams,
-        "QgX-s_IwezohJE97p"
+        "QgX-s_IwezohJE97p",
       );
       setSent(true);
       setFormData({ name: "", email: "", company: "", purpose: "" });
@@ -169,9 +169,9 @@ const ResumeModal = ({ isOpen, onClose }) => {
             <h3 className="text-lg sm:text-xl font-bold text-white font-heading mb-2">
               Request Sent Successfully!
             </h3>
-              <p className="text-sm sm:text-base text-gray-400 max-w-sm leading-relaxed">
-                Your details have been received. If approved, the resume
-                will be sent to{" "}
+            <p className="text-sm sm:text-base text-gray-400 max-w-sm leading-relaxed">
+              Your details have been received. If approved, the resume will be
+              sent to{" "}
               <span className="text-violet-400 font-semibold">
                 {formData.email}
               </span>
@@ -275,14 +275,9 @@ const ResumeModal = ({ isOpen, onClose }) => {
             {/* Submit */}
             <div className="animate-field" style={{ animationDelay: "0.25s" }}>
               <button
+                className="btn px-3 !h-[45px] !min-h-[45px] sm:!h-[45px] sm:!min-h-[45px] btn-primary hover:scale-105 transition-transform duration-200"
                 type="submit"
                 disabled={isSending}
-                className={`w-full py-3 sm:py-3.5 rounded-lg font-semibold text-white transition-all duration-300 text-sm sm:text-base
-                  ${
-                    isSending
-                      ? "bg-indigo-400/70 cursor-not-allowed opacity-70"
-                      : "bg-gradient-to-r from-[#6366f1] to-[#a855f7] hover:opacity-90 hover:scale-[1.02] hover:shadow-lg hover:shadow-violet-500/40"
-                  }`}
               >
                 {isSending ? "Sending Request..." : "Request Resume"}
               </button>
